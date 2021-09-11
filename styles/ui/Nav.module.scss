@@ -1,0 +1,22 @@
+@import "../variables";
+.nav{
+    height: $nav-height;
+    background:rgba(113, 103, 124, 0.1);
+    .hamburger{
+        background: $primary-color;
+        height: 100%;
+        width: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 0 0 15px 0;
+        transition: transform 0.5s;
+        .hamburgerIcon{
+            font-size: 35px;
+        }
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}

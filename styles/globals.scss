@@ -15,11 +15,13 @@ a {
   padding: 0;
   margin: 0;
 }
-// h1,h2,h3,h4.h5,h6,p{
-//   background-color:transparent
-// }
+
+ul{
+  list-style: none;
+}
+
 #canvasContainer{
-  position: absolute;
+  position: fixed;
   height: 100vh;
   width: 100vw;
   top: 0;
