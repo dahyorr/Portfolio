@@ -18,10 +18,9 @@
     "@/components/*": ["components/*"],
     "@/styles/*": ["styles/*"],
     "@/uiStyles/*": ["styles/ui/*"],
-    "@/ui/*": ["components/ui/*"],
     "@/helpers/*": ["helpers/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "helpers/WebGL.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
