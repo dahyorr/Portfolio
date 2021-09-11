@@ -1,5 +1,5 @@
 import React, {useRef, useEffect} from 'react'
-import styles from '@/uiStyles/Background.module.scss';
+import styles from '@/uiStyles/AnimatedBackground.module.scss';
 import { init, animate } from '@/helpers/backgroundAnimation'; 
 
 
@@ -15,7 +15,7 @@ const AnimatedBackground: React.FC = ({children}) => {
     }, [])
 
     return (
-        <div className={styles.background} >
+        <div className={styles.background} ref={animatedBackground} >
             {children}
         </div>
     )

@@ -1,13 +1,13 @@
 import React from 'react'
-import Background from './ui/AnimatedBackground'
+import AnimatedBackground from './ui/AnimatedBackground'
 import Nav from './ui/Nav'
 
 const Layout: React.FC = ({children}) => {
     return (
-        <Background>
+        <AnimatedBackground>
             <Nav/>
             {children}
-        </Background>
+        </AnimatedBackground>
     )
 }
 
