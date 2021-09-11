@@ -1,5 +1,5 @@
 import React from 'react'
-import Background from './ui/Background'
+import Background from './ui/AnimatedBackground'
 import Nav from './ui/Nav'
 
 const Layout: React.FC = ({children}) => {

@@ -1,5 +1,4 @@
 // import {useRef, useEffect} from 'react';
-// import styles from '@/uiStyles/Background.module.scss';
 // import { init, animate } from '@/helpers/backgroundAnimation'; 
 
 const Background: React.FC = ({children}) => {
