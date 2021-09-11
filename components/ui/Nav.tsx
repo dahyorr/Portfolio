@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import styles from '@/uiStyles/Nav.module.scss'
 import {GiHamburger} from 'react-icons/gi'
-import NavModal from '@/ui/NavModal'
+import NavModal from './NavModal'
 
 const Nav: React.FC = () => {
     const [navOpen, setNavOpen] = useState(false)
