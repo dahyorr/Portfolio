@@ -15,6 +15,7 @@ const Nav: React.FC = () => {
             <div className={styles.hamburger} onClick={openNav}>
                 <GiHamburger className={styles.hamburgerIcon}/>
             </div>
+            <p className={styles.namePlate}>Dayo Adebanjo</p>
             {navOpen && <NavModal onClose={closeNav}/>}
         </div>
     )

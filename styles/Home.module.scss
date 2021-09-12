@@ -1,1 +1,6 @@
 @import "variables";
+@import "utilities";
+
+.home{
+    @extend .container;
+}

@@ -62,7 +62,7 @@ const starForge = () => {
     const points: THREE.Vector3[] = []
 
     const materialOptions = {
-            size: 0.08, 
+            size: 0.1, 
             opacity: 0.7,
             color: 0xf6f2ff
         };
