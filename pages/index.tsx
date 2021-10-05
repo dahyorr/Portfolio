@@ -5,6 +5,7 @@ import Link from 'next/link'
 import styles from '../styles/Home.module.scss'
 import LinkedButton from '@/components/ui/LinkedButton'
 import AnimationWrapper from '@/components/AnimationWrapper'
+import Landing from '@/components/Landing'
 
 const Home: NextPage = () => {
   return (
@@ -13,17 +14,8 @@ const Home: NextPage = () => {
         <Head>
           <title>Dayo Adebanjo | Home</title>
         </Head>
-
-        <h1>{`Hi There!, I'm Dayo`}</h1>
-        <p>I&apos;m a pationate FullStack Developer </p>
-        {/* <div style={{
-          height: '100vh',
-          width: '50%',
-          background: 'red'
-        }}>back</div>
-        <div>end</div> */}
-
-        <LinkedButton direction="next" path="/about"> About</LinkedButton>
+          <Landing/>
+        {/* <LinkedButton direction="next" path="/about"> About</LinkedButton> */}
       </div>
     </AnimationWrapper>
   )
