@@ -1,6 +1,11 @@
 @import "variables";
 @import "utilities";
 
-.home{
-    @extend .container;
+.Home{
+    background: url('/images/wave.svg') no-repeat center center fixed; 
+    height: calc(100vh - 60px);
+    background-size: cover;
+    .content{
+        @extend .container;
+    }
 }

@@ -3,7 +3,7 @@
 
 .nav{
     height: $nav-height;
-    background:rgba(113, 103, 124, 0.1);
+    background:rgba(113, 103, 124, 0.3);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -17,6 +17,7 @@
         cursor: pointer;
         border-radius: 0 0 15px 0;
         transition: transform 0.5s;
+        color:$light-color;
         .hamburgerIcon{
             font-size: 35px;
         }
