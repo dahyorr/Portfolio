@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '@/styles/Test.module.scss'
 import AnimationWrapper from '@/components/AnimationWrapper'
 
 const Test: NextPage = () => {
@@ -15,9 +14,9 @@ return (
         </Head>    
         <h1>Sample Text</h1>
         {/* <Image src="/astronaut.png" alt="Astronaut" width={500} height={500} /> */}
-        <div className={styles.glassTest}>
+        {/* <div className={styles.glassTest}>
             <h1>😉</h1>
-        </div>
+        </div> */}
         </div>
     </AnimationWrapper>
 )

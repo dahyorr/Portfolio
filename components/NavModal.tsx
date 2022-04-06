@@ -62,10 +62,10 @@ const NavModal: React.FC<NavModalProps>= ({onClose}) => {
                 >
                     <GrClose onClick={closeModal} className={styles.closeIcon}/>
                     <ul>
-                        <NavItem onNavigate={onNavigate} path="/" >Home</NavItem>
-                        <NavItem onNavigate={onNavigate} path="/about" >About</NavItem>
-                        <NavItem onNavigate={onNavigate} path="/project">Project</NavItem>
-                        <NavItem onNavigate={onNavigate} path="/contact" >Contact</NavItem>
+                        <NavItem onNavigate={onNavigate} path="#home" >Home</NavItem>
+                        <NavItem onNavigate={onNavigate} path="#about" >About</NavItem>
+                        <NavItem onNavigate={onNavigate} path="#portfolio">Portfolio</NavItem>
+                        <NavItem onNavigate={onNavigate} path="#contact" >Contact</NavItem>
                         <NavItem onNavigate={onNavigate} path="/test">Test</NavItem>
                     </ul>
                 </motion.div>
