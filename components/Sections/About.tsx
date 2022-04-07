@@ -3,9 +3,9 @@ import PageSection from '../PageSection'
 
 const About: React.FC = () => {
     return (
-        <PageSection title="about">
-            <Box width="100%" height="100%" bgcolor="green">
-            About
+        <PageSection title="about" bgcolor="green">
+            <Box width="100%" height="100%" >
+                About
             </Box>
         </PageSection>
     )

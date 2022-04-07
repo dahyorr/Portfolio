@@ -3,8 +3,8 @@ import PageSection from '../PageSection'
 
 const Contact: React.FC = () => {
     return (
-        <PageSection title="contact">
-            <Box width="100%" height="100%" bgcolor="orange">
+        <PageSection title="contact" bgcolor="orange">
+            <Box width="100%" height="100%" >
                 Contact
             </Box>
         </PageSection>
