@@ -1,23 +1,17 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
-// import Image from 'next/image'
-import styles from '../styles/Home.module.scss'
-import LinkedButton from '@/components/ui/LinkedButton'
-import AnimationWrapper from '@/components/AnimationWrapper'
-import Landing from '@/components/Landing'
+import Landing from '@/components/Sections/Landing'
+import About from '@/components/Sections/About'
+import Portfolio from '@/components/Sections/Portfolio'
+import Contact from '@/components/Sections/Contact'
 
 const Home: NextPage = () => {
   return (
-    <AnimationWrapper>
-      <div className={styles.home}>
-        <Head>
-          <title>Dayo Adebanjo | Home</title>
-        </Head>
-          <Landing/>
-        {/* <LinkedButton direction="next" path="/about"> About</LinkedButton> */}
-      </div>
-    </AnimationWrapper>
+    <>
+      <Landing/>
+      <About/>
+      <Portfolio/>
+      <Contact/>
+    </>
   )
 }
 
