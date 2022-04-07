@@ -3,7 +3,7 @@ import PageSection from '../PageSection'
 
 const Landing: React.FC = () => {
     return (
-        <PageSection title="home" bgcolor="red">
+        <PageSection title="home" bgcolor="black">
             <Box width="100%" height="100%" >
                 Home
                 {/* <Landing/> */}
