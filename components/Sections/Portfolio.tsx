@@ -3,7 +3,7 @@ import PageSection from '../PageSection'
 
 const Portfolio: React.FC = () => {
     return (
-        <PageSection title="portfolio" bgcolor="black">
+        <PageSection title="portfolio" >
             <Box width="100%" height="100%" >
                 Portfolio
             </Box>

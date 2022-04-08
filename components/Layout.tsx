@@ -1,20 +1,16 @@
 import CssBaseline from '@mui/material/CssBaseline'
 import useMediaQuery from '@mui/material/useMediaQuery';
+import useTheme from '@mui/material/styles/useTheme';
 import Box from '@mui/material/Box'
-import { useTheme } from '@mui/material/styles';
 import React, {useState} from 'react'
-import NavHamburger from './NavHamburger'
 import Sidebar from './Sidebar'
+import Navbar from './Navbar'
 import GlobalStyles from '@mui/material/GlobalStyles';
 
 const Layout: React.FC = ({children}) => {
   const theme = useTheme();
-  const [mobileOpen, setMobileOpen] = useState(false);
   const isMediumScreen = useMediaQuery(theme.breakpoints.down('lg'));
-
-  const handleDrawerToggle = () => {
-      setMobileOpen(prev => !prev);
-  };
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <>
@@ -22,28 +18,30 @@ const Layout: React.FC = ({children}) => {
       <GlobalStyles 
         styles={{
           '*::-webkit-scrollbar': {
-            width: '6px',
+            width: '11px',
             borderRadius: '8px',
-            backgroundColor: `rgba(0, 0, 0, 0.05)`,
+            backgroundColor: `#F4F5FE`,
           },
           '*::-webkit-scrollbar-thumb': {
-            backgroundColor: `rgba(0, 0, 0, 1)`,
+            backgroundColor: `#999`,
+            borderRadius: '6px',
+            border: '3px solid white',
           },
         }}
       />
-      {isMediumScreen && <NavHamburger onClick={handleDrawerToggle}/>}
       <Box
         sx={{
-            display: 'flex',
-            justifyContent: 'flex-start',
+            // display: 'flex',
+            // justifyContent: 'flex-start',
             width: '100%'
         }}
       >
-        <Sidebar 
+        {/* <Sidebar 
             mobileOpen={mobileOpen} 
             setMobileOpen={setMobileOpen}
             swipeable={isMediumScreen}
-        />
+        /> */}
+        <Navbar/>
         <Box sx={{flexGrow: 1}}>{children}</Box>
       </Box>
     </>
