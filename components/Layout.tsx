@@ -1,20 +1,15 @@
 import CssBaseline from '@mui/material/CssBaseline'
-import useMediaQuery from '@mui/material/useMediaQuery';
+// import useMediaQuery from '@mui/material/useMediaQuery';
+import {useTheme} from '@mui/material/styles';
 import Box from '@mui/material/Box'
-import { useTheme } from '@mui/material/styles';
-import React, {useState} from 'react'
-import NavHamburger from './NavHamburger'
-import Sidebar from './Sidebar'
+import React, {useRef} from 'react'
+import Navbar from './Navbar'
 import GlobalStyles from '@mui/material/GlobalStyles';
 
 const Layout: React.FC = ({children}) => {
   const theme = useTheme();
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const isMediumScreen = useMediaQuery(theme.breakpoints.down('lg'));
-
-  const handleDrawerToggle = () => {
-      setMobileOpen(prev => !prev);
-  };
+  const scrollBoxRef = useRef<HTMLDivElement>(null);
+  // const isMediumScreen = useMediaQuery(theme.breakpoints.down('lg'));
 
   return (
     <>
@@ -22,29 +17,35 @@ const Layout: React.FC = ({children}) => {
       <GlobalStyles 
         styles={{
           '*::-webkit-scrollbar': {
-            width: '6px',
+            width: '11px',
             borderRadius: '8px',
-            backgroundColor: `rgba(0, 0, 0, 0.05)`,
+            backgroundColor: `#F4F5FE`,
           },
           '*::-webkit-scrollbar-thumb': {
-            backgroundColor: `rgba(0, 0, 0, 1)`,
+            backgroundColor: `#999`,
+            borderRadius: '6px',
+            border: '3px solid white',
           },
+          scrollBehavior: 'smooth'
         }}
       />
-      {isMediumScreen && <NavHamburger onClick={handleDrawerToggle}/>}
       <Box
         sx={{
-            display: 'flex',
-            justifyContent: 'flex-start',
             width: '100%'
         }}
       >
-        <Sidebar 
-            mobileOpen={mobileOpen} 
-            setMobileOpen={setMobileOpen}
-            swipeable={isMediumScreen}
-        />
-        <Box sx={{flexGrow: 1}}>{children}</Box>
+        <Navbar scrollRef={scrollBoxRef}/>
+        <Box 
+          ref={scrollBoxRef}
+          sx={{
+            flexGrow: 1,
+            height: "100vh",
+            width: "100vw",
+            scrollSnapType: 'y mandatory',
+            overflowY: 'scroll',
+            scrollBehavior: 'smooth'
+          }}
+        >{children}</Box>
       </Box>
     </>
   )
