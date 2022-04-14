@@ -63,6 +63,9 @@ const Navbar: React.FC<NavbarProps> = ({scrollRef}) => {
           '&.Mui-selected': {
             backgroundColor: 'primary.main',
             color: '#fff',
+            "&:hover": {
+              backgroundColor: 'primary.main',
+            }
           }
         }}
       >
