@@ -7,7 +7,7 @@ import Contact from '@/components/Sections/Contact'
 const Home: NextPage = () => {
   return (
     <>
-      <Landing/>
+      <Landing />
       <About/>
       <Portfolio/>
       <Contact/>

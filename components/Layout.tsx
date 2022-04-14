@@ -1,16 +1,15 @@
 import CssBaseline from '@mui/material/CssBaseline'
-import useMediaQuery from '@mui/material/useMediaQuery';
-import useTheme from '@mui/material/styles/useTheme';
+// import useMediaQuery from '@mui/material/useMediaQuery';
+import {useTheme} from '@mui/material/styles';
 import Box from '@mui/material/Box'
-import React, {useState} from 'react'
-import Sidebar from './Sidebar'
+import React, {useRef} from 'react'
 import Navbar from './Navbar'
 import GlobalStyles from '@mui/material/GlobalStyles';
 
 const Layout: React.FC = ({children}) => {
   const theme = useTheme();
-  const isMediumScreen = useMediaQuery(theme.breakpoints.down('lg'));
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const scrollBoxRef = useRef<HTMLDivElement>(null);
+  // const isMediumScreen = useMediaQuery(theme.breakpoints.down('lg'));
 
   return (
     <>
@@ -27,22 +26,26 @@ const Layout: React.FC = ({children}) => {
             borderRadius: '6px',
             border: '3px solid white',
           },
+          scrollBehavior: 'smooth'
         }}
       />
       <Box
         sx={{
-            // display: 'flex',
-            // justifyContent: 'flex-start',
             width: '100%'
         }}
       >
-        {/* <Sidebar 
-            mobileOpen={mobileOpen} 
-            setMobileOpen={setMobileOpen}
-            swipeable={isMediumScreen}
-        /> */}
-        <Navbar/>
-        <Box sx={{flexGrow: 1}}>{children}</Box>
+        <Navbar scrollRef={scrollBoxRef}/>
+        <Box 
+          ref={scrollBoxRef}
+          sx={{
+            flexGrow: 1,
+            height: "100vh",
+            width: "100vw",
+            scrollSnapType: 'y mandatory',
+            overflowY: 'scroll',
+            scrollBehavior: 'smooth'
+          }}
+        >{children}</Box>
       </Box>
     </>
   )
