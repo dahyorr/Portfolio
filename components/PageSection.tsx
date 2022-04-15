@@ -7,9 +7,10 @@ import { useOnScreen, useSection } from 'hooks';
 
 interface PageSectionProps extends BoxProps {
   title: string;
+  disablePy?: boolean;
 }
 
-const PageSection: React.FC<PageSectionProps> = ({children, title, ...props}) => {
+const PageSection: React.FC<PageSectionProps> = ({children, title, disablePy, sx, ...props}) => {
   const pageRef = useRef<HTMLElement>(null);
   const {setSection} = useSection()
 
@@ -28,9 +29,9 @@ const PageSection: React.FC<PageSectionProps> = ({children, title, ...props}) =>
       width="100%" 
       id={title}
       component="main" 
-      sx={{scrollSnapAlign: 'start'}}
+      sx={{scrollSnapAlign: 'start', ...sx}}
       ref={pageRef}
-      py={10}
+      py={disablePy ? 0 : 10}
       {...props}
     >
       <Container maxWidth="xl" sx={{

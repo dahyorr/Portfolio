@@ -27,11 +27,13 @@ const Navbar: React.FC<NavbarProps> = ({scrollRef}) => {
   const theme = useTheme();
   const {section} = useSection();
   const isMediumScreen = useMediaQuery(theme.breakpoints.down('md'));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const textColor = transparentBackground ? '#fff' : 'inherit'
 
   const links = [
     {title: 'Home', id: 'home', href: '#home'},
     {title: 'About', id: 'about', href: '#about'},
+    {title: 'Skills', id: 'skills', href: '#skills'},
     {title: 'Portfolio', id: 'portfolio', href: '#portfolio'},
     {title: 'Contact', id: 'contact', href: '#contact'},
   ]
@@ -62,7 +64,6 @@ const Navbar: React.FC<NavbarProps> = ({scrollRef}) => {
         sx={{
           '&.Mui-selected': {
             backgroundColor: 'primary.main',
-            color: '#fff',
             "&:hover": {
               backgroundColor: 'primary.main',
             }
@@ -105,7 +106,12 @@ const Navbar: React.FC<NavbarProps> = ({scrollRef}) => {
         }}
       >
         <Container maxWidth="xl">
-          <Toolbar disableGutters>
+          <Toolbar 
+            disableGutters
+            sx={{
+              minHeight: isSmallScreen? 48: undefined
+            }}
+          >
             <Box sx={{
               width: "100%",
               display: "flex",
