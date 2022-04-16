@@ -23,7 +23,7 @@ import {AiFillGithub, AiOutlineTwitter, AiFillLinkedin, AiFillMail} from 'react-
 
 const Landing: React.FC = () => {
   const theme = useTheme();
-  const isLargeScreen = useMediaQuery(theme.breakpoints.down('lg'));
+  const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl'));
 
   const particlesInit = useCallback(async (engine: Engine) => {
     loadFull(engine);
