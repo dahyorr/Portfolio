@@ -12,6 +12,8 @@ import Stack from '@mui/material/Stack'
 import Button from '@mui/material/Button'
 import Link from '@mui/material/Link'
 import IconButton from '@mui/material/IconButton'
+import useMediaQuery from '@mui/material/useMediaQuery';
+import {useTheme} from '@mui/material/styles';
 // import { styled } from '@mui/system';
 import {BiMailSend} from 'react-icons/bi'
 import {AiFillGithub, AiOutlineTwitter, AiFillLinkedin, AiFillMail} from 'react-icons/ai'
@@ -20,6 +22,8 @@ import {AiFillGithub, AiOutlineTwitter, AiFillLinkedin, AiFillMail} from 'react-
 // }))
 
 const Landing: React.FC = () => {
+  const theme = useTheme();
+  const isLargeScreen = useMediaQuery(theme.breakpoints.down('lg'));
 
   const particlesInit = useCallback(async (engine: Engine) => {
     loadFull(engine);
@@ -31,7 +35,6 @@ const Landing: React.FC = () => {
             bgcolor="transparent"
             sx={{
                 position: 'relative',
-                pl: 3,
                 '& #landing-background': {
                     height: '100%',
                     width: '100%',
@@ -44,7 +47,7 @@ const Landing: React.FC = () => {
                 }
             }}
         >
-          <Stack
+          {!isLargeScreen && (<Stack
             id="socials"
             spacing={1.5}
             sx={{
@@ -90,7 +93,7 @@ const Landing: React.FC = () => {
             >
               <AiFillMail color="white"/>
             </IconButton>
-          </Stack>
+          </Stack>)}
 
             <Particles 
                 id="landing-background" 

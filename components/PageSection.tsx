@@ -34,7 +34,7 @@ const PageSection: React.FC<PageSectionProps> = ({children, title, disablePy, sx
       py={disablePy ? 0 : 10}
       {...props}
     >
-      <Container maxWidth="xl" sx={{
+      <Container maxWidth="lg" sx={{
         height:"100%",
       }}>
         {/* <Toolbar/> */}
