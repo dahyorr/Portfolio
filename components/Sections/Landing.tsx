@@ -33,6 +33,7 @@ const Landing: React.FC = () => {
         <PageSection 
             title="home" 
             bgcolor="transparent"
+            viewportHeight
             sx={{
                 position: 'relative',
                 '& #landing-background': {

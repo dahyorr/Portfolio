@@ -10,13 +10,16 @@ import List from '@mui/material/List'
 import Link from '@mui/material/Link'
 import ListItemText from '@mui/material/ListItemText'
 import Button from '@mui/material/Button'
-import Icon from '@mui/material/Icon'
 import CodeIcon from 'assets/web-code.svg'
 import ToolsIcon from 'assets/computer-repair.svg'
 import {MdCloudDownload} from 'react-icons/md'
-import NextLink from 'next/link'
+import {useTheme} from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const About: React.FC = () => {
+
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   const skillList = {
     languages: ["TypeScript", 'JavaScript', 'Python', 'SQL', 'Graphql'],
@@ -51,7 +54,7 @@ const About: React.FC = () => {
               i&apos;m A Full-Stack Developer from Lagos, Nigeria,
               ... fill in more content
             </Typography>
-            <a href="/resume.pdf" download>
+            <Link href="/resume.pdf" download color="inherit" underline="none">
               <Button 
                 variant="contained"
                 color="secondary"
@@ -62,7 +65,7 @@ const About: React.FC = () => {
                 }}
                 startIcon={<MdCloudDownload />}
               >Download My Resume</Button>
-            </a>
+            </Link>
           </Stack>
         </Container>
       </Box>
@@ -72,13 +75,21 @@ const About: React.FC = () => {
           width: "100%",
           margin: 'auto',
           position: 'relative',
-          top: '-8rem',
+          top: '-10rem',
           py: 4,
-        }}>
-          <Box display="flex" justifyContent={'space-between'} minHeight="16rem">
+        }}
+        elevation={6}
+        >
+          <Box 
+            display="flex" 
+            justifyContent={'space-between'}  
+            alignItems="center" 
+            minHeight="16rem" 
+            flexDirection={isSmallScreen ? 'column' : 'row'}
+          >
             <Stack width="50%" alignItems="center" py="1rem">
               <SvgIcon color="primary" component={CodeIcon} inheritViewBox sx={{ fontSize: 70 }}/>
-              <Typography variant="h4" mb={2}>Languages And Skills</Typography>
+              <Typography variant="h4" align="center" mb={2}>Languages And Skills</Typography>
 
               <Stack direction="row" spacing={8}>
                 <Box>
@@ -109,15 +120,15 @@ const About: React.FC = () => {
               </Stack>
             </Stack>
             
-            <Divider orientation="vertical" flexItem />
+            <Divider orientation={isSmallScreen ? "horizontal" : "vertical"} flexItem />
 
             <Stack width="50%" alignItems="center" py="1rem">
               <SvgIcon color="primary" component={ToolsIcon} inheritViewBox sx={{ fontSize: 70 }}/>
-              <Typography variant="h4" mb={2}>My Dev Tools</Typography>
+              <Typography variant="h4" mb={2} align="center">My Dev Tools</Typography>
 
               <Stack direction='row' spacing={8}>
               <Box>
-                <Typography color="primary" variant="h5" align='center'>Cloud Services</Typography>
+                <Typography color="primary" variant="h5" align='center'>Services</Typography>
                 <List>
                 {skillList.cloudServices.map((skill) => (
                     <ListItemText 

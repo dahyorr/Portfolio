@@ -4,14 +4,17 @@ import Container from '@mui/material/Container'
 import { BoxProps } from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import { useOnScreen, useSection } from 'hooks';
+import {Breakpoint} from '@mui/material';
 
 interface PageSectionProps extends BoxProps {
   title: string;
   disablePy?: boolean;
   disableContainer?: boolean;
+  containerWidth?: Breakpoint | false;
+  viewportHeight?: boolean; 
 }
 
-const PageSection: React.FC<PageSectionProps> = ({children, title, disablePy, disableContainer, sx, ...props}) => {
+const PageSection: React.FC<PageSectionProps> = ({children, title, disablePy, disableContainer, containerWidth, viewportHeight, sx, ...props}) => {
   const pageRef = useRef<HTMLElement>(null);
   const {setSection} = useSection()
 
@@ -31,7 +34,7 @@ const PageSection: React.FC<PageSectionProps> = ({children, title, disablePy, di
       }
     }
     if(!disableContainer) return (
-      <Container {...sharedProps} maxWidth="xl">{children}</Container>
+      <Container {...sharedProps} maxWidth={containerWidth || "xl"}>{children}</Container>
     )
     else return (<Box {...sharedProps}>{children}</Box>)
   }
@@ -39,7 +42,7 @@ const PageSection: React.FC<PageSectionProps> = ({children, title, disablePy, di
   return (
     <Box 
       minHeight={"100vh"} 
-      height="100vh" 
+      height={viewportHeight ? "100vh": undefined} 
       width="100%" 
       id={title}
       component="main" 
