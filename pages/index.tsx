@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Landing from '@/components/Sections/Landing'
 import About from '@/components/Sections/About'
-import Portfolio from '@/components/Sections/Portfolio'
+import Projects from '@/components/Sections/Projects'
 import Contact from '@/components/Sections/Contact'
 
 const Home: NextPage = () => {
@@ -9,7 +9,7 @@ const Home: NextPage = () => {
     <>
       <Landing />
       <About/>
-      <Portfolio/>
+      <Projects/>
       <Contact/>
     </>
   )

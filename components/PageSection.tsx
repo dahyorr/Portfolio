@@ -7,9 +7,11 @@ import { useOnScreen, useSection } from 'hooks';
 
 interface PageSectionProps extends BoxProps {
   title: string;
+  disablePy?: boolean;
+  disableContainer?: boolean;
 }
 
-const PageSection: React.FC<PageSectionProps> = ({children, title, ...props}) => {
+const PageSection: React.FC<PageSectionProps> = ({children, title, disablePy, disableContainer, sx, ...props}) => {
   const pageRef = useRef<HTMLElement>(null);
   const {setSection} = useSection()
 
@@ -21,6 +23,19 @@ const PageSection: React.FC<PageSectionProps> = ({children, title, ...props}) =>
     }
   }, [isOnScreen, title, setSection])
 
+  const renderChild = () => {
+    const sharedProps = {
+      sx: {
+        height:"100%",
+        minHeight: 0,
+      }
+    }
+    if(!disableContainer) return (
+      <Container {...sharedProps} maxWidth="xl">{children}</Container>
+    )
+    else return (<Box {...sharedProps}>{children}</Box>)
+  }
+
   return (
     <Box 
       minHeight={"100vh"} 
@@ -28,17 +43,12 @@ const PageSection: React.FC<PageSectionProps> = ({children, title, ...props}) =>
       width="100%" 
       id={title}
       component="main" 
-      sx={{scrollSnapAlign: 'start'}}
+      sx={{...sx}}
       ref={pageRef}
-      py={10}
+      py={disablePy ? 0 : 10}
       {...props}
     >
-      <Container maxWidth="xl" sx={{
-        height:"100%",
-      }}>
-        {/* <Toolbar/> */}
-        {children}
-      </Container>
+      {renderChild()}
     </Box>
   )
 }
