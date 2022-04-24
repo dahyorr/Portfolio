@@ -1,6 +1,20 @@
 import { createTheme} from '@mui/material/styles';
 // import {grey} from '@mui/material/colors'
 
+declare module '@mui/material/styles' {
+    interface Palette {
+        platinium: Palette['primary'];
+        amaranth: Palette['primary'];
+    }
+    interface PaletteOptions {
+        platinium: PaletteOptions['primary'];
+        amaranth: PaletteOptions['primary'];
+    }
+    interface PaletteColor {
+        darker?: string;
+    }
+}
+
 export const theme = createTheme({
     palette: {
         mode: 'light',
@@ -11,6 +25,12 @@ export const theme = createTheme({
         secondary: {
             main: '#3c3c3c',
             contrastText: "#ffffff"
+        },
+        platinium: {
+            main: '#E7E7E7',
+        },
+        amaranth: {
+            main: '#db324d',
         },
         background: {
             default: '#F4F5FE',

@@ -33,15 +33,15 @@ const Navbar: React.FC<NavbarProps> = ({scrollRef}) => {
   const links = [
     {title: 'Home', id: 'home', href: '#home'},
     {title: 'About', id: 'about', href: '#about'},
-    {title: 'Skills', id: 'skills', href: '#skills'},
-    {title: 'Portfolio', id: 'portfolio', href: '#portfolio'},
+    // {title: 'Skills', id: 'skills', href: '#skills'},
+    {title: 'Projects', id: 'projects', href: '#projects'},
     {title: 'Contact', id: 'contact', href: '#contact'},
   ]
 
   useEffect(() => {
     const element = scrollRef.current;
     const onScroll = () => {
-      if(element?.scrollTop && element.scrollTop > 10) {
+      if(element?.scrollTop && element.scrollTop > 0.2 * document.documentElement.clientHeight) {
         setTransparentBackground(false)
       }
       else{
@@ -62,6 +62,7 @@ const Navbar: React.FC<NavbarProps> = ({scrollRef}) => {
       <ListItemButton 
         selected={section === id}
         sx={{
+          borderRadius: 1,
           '&.Mui-selected': {
             backgroundColor: 'primary.main',
             "&:hover": {

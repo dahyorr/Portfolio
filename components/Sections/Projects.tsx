@@ -1,14 +1,14 @@
 import Box from '@mui/material/Box'
 import PageSection from '../PageSection'
 
-const Skills: React.FC = () => {
+const Portfolio: React.FC = () => {
     return (
-        <PageSection title="skills" >
+        <PageSection title="projects" >
             <Box width="100%" height="100%" >
-                Skills
+                Projects
             </Box>
         </PageSection>
     )
 }
 
-export default Skills
+export default Portfolio
