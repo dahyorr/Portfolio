@@ -14,12 +14,9 @@ import Link from '@mui/material/Link'
 import IconButton from '@mui/material/IconButton'
 import useMediaQuery from '@mui/material/useMediaQuery';
 import {useTheme} from '@mui/material/styles';
-// import { styled } from '@mui/system';
 import {BiMailSend} from 'react-icons/bi'
 import {AiFillGithub, AiOutlineTwitter, AiFillLinkedin, AiFillMail} from 'react-icons/ai'
-// const SolidBox = styled(Box)<BoxProps>(({theme}) => ({
-//   backgroundColor: theme.palette.primary.main
-// }))
+import socialLinks from 'helpers/socials.json'
 
 const Landing: React.FC = () => {
   const theme = useTheme();
@@ -62,7 +59,7 @@ const Landing: React.FC = () => {
           >
             <IconButton 
               component={Link} 
-              href="https://www.github.com/dahyorr" 
+              href={socialLinks.github}
               target="_blank"
               aria-label="github"
             >
@@ -70,7 +67,7 @@ const Landing: React.FC = () => {
             </IconButton>
             <IconButton 
               component={Link} 
-              href="https://twitter.com/dah_yor" 
+              href={socialLinks.twitter}
               target="_blank"
               aria-label="twitter"
             >
@@ -79,7 +76,7 @@ const Landing: React.FC = () => {
 
             <IconButton 
               component={Link} 
-              href="https://www.linkedin.com/in/dayo-adebanjo-4a5381126/" 
+              href={socialLinks.linkedin}
               target="_blank"
               aria-label="linkedin"
             >
@@ -88,7 +85,7 @@ const Landing: React.FC = () => {
 
             <IconButton 
               component={Link} 
-              href="mailto:hello@dayo.dev" 
+              href={socialLinks.mailTo}
               target="_blank"
               aria-label="mail"
             >

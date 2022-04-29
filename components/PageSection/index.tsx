@@ -12,9 +12,20 @@ interface PageSectionProps extends BoxProps {
   disableContainer?: boolean;
   containerWidth?: Breakpoint | false;
   viewportHeight?: boolean; 
+  fitContent?: boolean; 
 }
 
-const PageSection: React.FC<PageSectionProps> = ({children, title, disablePy, disableContainer, containerWidth, viewportHeight, sx, ...props}) => {
+const PageSection: React.FC<PageSectionProps> = ({
+  children, 
+  title, 
+  disablePy, 
+  disableContainer, 
+  containerWidth, 
+  viewportHeight, 
+  sx, 
+  fitContent,
+  ...props
+}) => {
   const pageRef = useRef<HTMLElement>(null);
   const {setSection} = useSection()
 
@@ -41,8 +52,8 @@ const PageSection: React.FC<PageSectionProps> = ({children, title, disablePy, di
 
   return (
     <Box 
-      minHeight={"100vh"} 
-      height={viewportHeight ? "100vh": undefined} 
+      minHeight={fitContent ? undefined : "100vh"} 
+      height={viewportHeight ? "100vh": (fitContent ? "fit-content": undefined)} 
       width="100%" 
       id={title}
       component="main" 
