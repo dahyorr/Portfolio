@@ -7,7 +7,11 @@ import GlobalStyles from '@mui/material/GlobalStyles';
 import {isMobile} from 'react-device-detect';
 import Footer from '@/components/Sections/Footer'
 
-const Layout: React.FC = ({children}) => {
+interface LayoutProps{
+  forceTransparencyDisable?: boolean;
+}
+
+const Layout: React.FC<LayoutProps> = ({children, forceTransparencyDisable}) => {
   const theme = useTheme();
   // const scrollBoxRef = useRef<HTMLDivElement>(null);
   // const cursorRef = useRef<HTMLDivElement>(null);
@@ -49,7 +53,7 @@ const Layout: React.FC = ({children}) => {
           overflowY: 'scroll',
         }}
       />
-      <Navbar />
+      <Navbar forceTransparencyDisable={forceTransparencyDisable || false}/>
       {children}
       <Footer/>
     </>

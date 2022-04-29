@@ -7,7 +7,7 @@ import ProjectShowcase from '../ProjectShowcase'
 
 const Portfolio: React.FC = () => {
     return (
-        <PageSection title="projects" containerWidth="xl" disablePy>
+        <PageSection title="projects" containerWidth="xl" fitContent>
             <Box width="100%" height="100%" >
                 <Typography variant="h3" align="center" mb={2}>My Recent Projects</Typography>
                 <Typography variant="body1" fontSize={'1.1rem'} align="center" mb={2}>Here are some of my recent projects</Typography>

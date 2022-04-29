@@ -34,6 +34,7 @@ const About: React.FC = () => {
       sx={{position: 'relative'}}
       disablePy
       disableContainer
+      fitContent
     >
       <Box 
         width="100%" 
@@ -70,12 +71,16 @@ const About: React.FC = () => {
         </Container>
       </Box>
 
-      <Container maxWidth='lg' sx={{height:"calc(100% - 10rem)"}}>
+      <Container maxWidth='lg' 
+      sx={{
+        // minHeight:"calc(100% - 10rem)", 
+        // overflow: 'hidden',
+        top: '-10rem',
+        position: 'relative',
+        }}>
         <Paper sx={{
           width: "100%",
           margin: 'auto',
-          position: 'relative',
-          top: '-10rem',
           py: 4,
         }}
         elevation={6}

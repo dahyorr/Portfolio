@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const withTM = require('next-transpile-modules')(['tsparticles']);
+const withPWA = require('next-pwa')
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
   options: {
@@ -10,11 +11,15 @@ const withMDX = require('@next/mdx')({
   },
 })
 
-module.exports = withMDX(withTM({
+module.exports = withPWA(withMDX(withTM({
   reactStrictMode: true,
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
   images: {
     domains: ['source.unsplash.com'],
+  },
+  pwa: {
+    disable: process.env.NODE_ENV === 'development',
+    dest: 'public'
   },
   webpack(config) {
     config.module.rules.push({
@@ -23,7 +28,7 @@ module.exports = withMDX(withTM({
     });
     return config;
   }
-}))
+})))
 
 // module.exports = withMDX({
 //   // Append the default value with md extensions

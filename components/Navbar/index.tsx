@@ -4,7 +4,6 @@ import Container from '@mui/material/Container'
 import Toolbar from '@mui/material/Toolbar'
 import Box from '@mui/material/Box'
 import Stack from '@mui/material/Stack'
-import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 import ListItemButton from '@mui/material/ListItemButton'
@@ -18,10 +17,11 @@ import { List } from '@mui/material'
 import { useSection } from 'hooks'
 
 interface NavbarProps {
+  forceTransparencyDisable: boolean;
 }
 
-const Navbar: React.FC<NavbarProps> = () => {
-  const [transparentBackground, setTransparentBackground] = useState(true);
+const Navbar: React.FC<NavbarProps> = ({forceTransparencyDisable}) => {
+  const [transparentBackground, setTransparentBackground] = useState(forceTransparencyDisable ? false :  true);
   const [openDrawer, setOpenDrawer] = useState(false);
   const theme = useTheme();
   const {section} = useSection();
@@ -30,15 +30,16 @@ const Navbar: React.FC<NavbarProps> = () => {
   const textColor = transparentBackground ? '#fff' : 'inherit'
 
   const links = [
-    {title: 'Home', id: 'home', href: '#home'},
-    {title: 'About', id: 'about', href: '#about'},
+    {title: 'Home', id: 'home', href: '/#home'},
+    {title: 'About', id: 'about', href: '/#about'},
     // {title: 'Skills', id: 'skills', href: '#skills'},
-    {title: 'Projects', id: 'projects', href: '#projects'},
-    {title: 'Contact', id: 'contact', href: '#contact'},
+    {title: 'Projects', id: 'projects', href: '/#projects'},
+    {title: 'Contact', id: 'contact', href: '/#contact'},
   ]
 
   useEffect(() => {
     // const element = scrollRef.current;
+    if(forceTransparencyDisable) return;
     const onScroll = () => {
       if(document.documentElement.scrollTop > 0.1 * document.documentElement.clientHeight) {
         setTransparentBackground(false)
@@ -54,7 +55,7 @@ const Navbar: React.FC<NavbarProps> = () => {
 
   useEffect(() => {
     setOpenDrawer(false)
-  }, [isMediumScreen])
+  }, [isMediumScreen, forceTransparencyDisable])
 
   const linkMap = links.map(({id, title, href}) => (
     <NextLink href={href} key={id} passHref>
