@@ -18,10 +18,9 @@ import { List } from '@mui/material'
 import { useSection } from 'hooks'
 
 interface NavbarProps {
-  scrollRef: React.RefObject<HTMLDivElement>;
 }
 
-const Navbar: React.FC<NavbarProps> = ({scrollRef}) => {
+const Navbar: React.FC<NavbarProps> = () => {
   const [transparentBackground, setTransparentBackground] = useState(true);
   const [openDrawer, setOpenDrawer] = useState(false);
   const theme = useTheme();
@@ -39,9 +38,9 @@ const Navbar: React.FC<NavbarProps> = ({scrollRef}) => {
   ]
 
   useEffect(() => {
-    const element = scrollRef.current;
+    // const element = scrollRef.current;
     const onScroll = () => {
-      if(element?.scrollTop && element.scrollTop > 0.2 * document.documentElement.clientHeight) {
+      if(document.documentElement.scrollTop > 0.1 * document.documentElement.clientHeight) {
         setTransparentBackground(false)
       }
       else{
@@ -49,8 +48,8 @@ const Navbar: React.FC<NavbarProps> = ({scrollRef}) => {
       }
     }
 
-      element?.addEventListener('scroll', onScroll)
-    return () => {element?.removeEventListener('scroll', onScroll)}
+      document.addEventListener('scroll', onScroll)
+    return () => {document?.removeEventListener('scroll', onScroll)}
   })
 
   useEffect(() => {
@@ -62,7 +61,7 @@ const Navbar: React.FC<NavbarProps> = ({scrollRef}) => {
       <ListItemButton 
         selected={section === id}
         sx={{
-          borderRadius: 1,
+          borderRadius: isMediumScreen ? 0 : 1,
           '&.Mui-selected': {
             backgroundColor: 'primary.main',
             "&:hover": {
@@ -120,8 +119,8 @@ const Navbar: React.FC<NavbarProps> = ({scrollRef}) => {
               color: 'secondary.main',  
             }}>
               <Typography
-                fontFamily={"Permanent Marker"}
-                variant="h2"
+                fontFamily={"La Belle Aurore"}
+                variant={ isSmallScreen ? "h4": 'h2'}
                 color={textColor}
               >
                 Dayo

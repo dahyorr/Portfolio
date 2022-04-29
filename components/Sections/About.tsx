@@ -23,7 +23,7 @@ const About: React.FC = () => {
 
   const skillList = {
     languages: ["TypeScript", 'JavaScript', 'Python', 'SQL', 'Graphql'],
-    frameworks: ["React", 'Next.js', 'Django', 'Express', 'Next.js', 'Severless'],
+    frameworks: ["React", 'Next.js', 'Django', 'Express', 'Nest.js', 'Severless'],
     cloudServices: ['AWS', 'Firebase', 'Railway', 'Heroku', 'Vercel'],
     others: ['Docker', 'Visual Studio Code', 'Postgres', 'Mongo Db', 'Redis'],
   }
@@ -51,7 +51,7 @@ const About: React.FC = () => {
               Hi im Dayo. Nice to meet you.
               </Typography>
             <Typography color="white" align='justify' mb={2}>
-              i&apos;m A Full-Stack Developer from Lagos, Nigeria,
+              I&apos;m A Full-Stack Developer from Lagos, Nigeria,
               ... fill in more content
             </Typography>
             <Link href="/resume.pdf" download color="inherit" underline="none">
@@ -70,7 +70,7 @@ const About: React.FC = () => {
         </Container>
       </Box>
 
-      <Container maxWidth='lg'>
+      <Container maxWidth='lg' sx={{height:"calc(100% - 10rem)"}}>
         <Paper sx={{
           width: "100%",
           margin: 'auto',

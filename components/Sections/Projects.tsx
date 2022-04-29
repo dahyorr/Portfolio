@@ -7,9 +7,10 @@ import ProjectShowcase from '../ProjectShowcase'
 
 const Portfolio: React.FC = () => {
     return (
-        <PageSection title="projects" containerWidth="xl" >
+        <PageSection title="projects" containerWidth="xl" disablePy>
             <Box width="100%" height="100%" >
-                <Typography variant="h3" align="center" mb={4}>Some Of My Recent Works</Typography>
+                <Typography variant="h3" align="center" mb={2}>My Recent Projects</Typography>
+                <Typography variant="body1" fontSize={'1.1rem'} align="center" mb={2}>Here are some of my recent projects</Typography>
                 <Grid container spacing={4} wrap='wrap'>
                     <Grid item xs={12} sm={6} md={4}>
                         <ProjectShowcase/>
@@ -48,7 +49,7 @@ const Portfolio: React.FC = () => {
                     justifyContent: 'center',
                     mt: 4
                 }}>
-                    <Button  size="large" variant="contained">View More</Button>
+                    {/* <Button size="large" variant="contained">View More</Button> */}
                 </Box>
             </Box>
         </PageSection>
