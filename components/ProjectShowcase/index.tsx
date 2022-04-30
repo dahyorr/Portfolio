@@ -10,21 +10,25 @@ import {BsCodeSlash} from 'react-icons/bs'
 import {RiSlideshow3Fill} from 'react-icons/ri'
 import { useDisclosure } from 'hooks'
 import ShowcaseModal from './ShowcaseModal'
+import { Project } from 'typings'
+import { generateImageUrl } from 'helpers/cloudinary'
 
 interface ProjectShowcaseProps{
-
+  project: Project;
 }
 
-const ProjectShowcase: React.FC<ProjectShowcaseProps> = () => {
+const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({project}) => {
   const {isOpen, onOpen, onClose} = useDisclosure()
 
   return (
     <>
-      <ShowcaseModal open={isOpen} handleClose={onClose}/>
-      <Box sx={{
-        bgcolor: 'primary.main',
+      <ShowcaseModal open={isOpen} handleClose={onClose} images={project.images} description={project.description}/>
+      <Box 
+      sx={{
+        bgcolor: 'rgba(0,0,0,0.7)',
+        boxShadow: 6,
         transition: 'transform 1s cubic-bezier(0.2, 1, 0.3, 1)',
-        aspectRatio: '16 / 10',
+        aspectRatio: '16 / 9',
         borderRadius: 1.5,
         overflow: 'hidden',
         position: 'relative',
@@ -56,9 +60,13 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = () => {
         },
 
       }}>
-        <Box className="img-container" sx={{
+        <Box 
+        className="img-container" 
+        sx={{
           transform: 'translateZ(0)',
           display: 'block',
+          height: '100%',
+          width: '100%',
           transition: 'transform 750ms cubic-bezier(0.2, 1, 0.3, 1)',
           '&:before':{
             content: '""',
@@ -67,7 +75,7 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = () => {
             overflow: 'hidden',
           },
           img: {
-            position: 'absolute',
+            position: 'relative',
             top: 0,
             left: 0,
             width: '100%',
@@ -75,7 +83,13 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = () => {
             lineHeight: 0,
           }
         }}>
-          <Image layout="fill" src={'https://source.unsplash.com/random/600×400/'} alt="project Name" priority/>
+          <Image 
+            layout="fill" 
+            quality={100} 
+            src={generateImageUrl(project.images[0], 'small')} 
+            alt={project.title} 
+            priority
+          />
         </Box>
         <Stack className="showcase-content" sx={{
           position: 'absolute', 
@@ -87,23 +101,22 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = () => {
           textAlign: 'center',
           zIndex: 1,
           color: '#fff',
-          transform: 'translateY(-20%)',
+          transform: 'translateY(-100%)',
           transition: 'opacity 500ms cubic-bezier(0.2, 1, 0.3, 1), transform 500ms cubic-bezier(0.2, 1, 0.3, 1)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-evenly'
         }}>
-          {/* <Typography variant="h5">Overlay Content</Typography> */}
-          <Typography>Short Description</Typography>
+          <Typography>{project.shortDescription}</Typography>
           <Stack spacing={2} alignItems="center" direction='row'>
             
-            <Link href={'#projects'} target="_blank" color="#fff">
+            <Link href={project.liveUrl} target="_blank" color="#fff">
               <IconButton aria-label="View Project" color="inherit" size='large'>
                 <RiSlideshow3Fill fontSize="25"/>
               </IconButton>
             </Link>
 
-            <Link href={'#projects'} target="_blank" color="#fff">
+            <Link href={project.githubRepo} target="_blank" color="#fff">
               <IconButton aria-label="View Code" color="inherit" size='large'>
                 <BsCodeSlash fontSize="25"/>
               </IconButton>

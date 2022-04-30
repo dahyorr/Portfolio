@@ -15,7 +15,7 @@ module.exports = withPWA(withMDX(withTM({
   reactStrictMode: true,
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
   images: {
-    domains: ['source.unsplash.com'],
+    domains: ['res.cloudinary.com'],
   },
   pwa: {
     disable: process.env.NODE_ENV === 'development',
