@@ -4,3 +4,13 @@ export interface MessageRequestBody{
   subject?: string;
   name: string;
 }
+
+export interface Project{
+  title: string,
+  description: JSX.Element,
+  shortDescription: string,
+  images: string[],
+  githubRepo: string,
+  liveUrl: string,
+  inProgress: boolean,
+}
