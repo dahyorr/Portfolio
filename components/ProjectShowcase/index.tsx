@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography'
 import Link from '@mui/material/Link'
 import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
+import Tooltip from '@mui/material/Tooltip';
 import {BsCodeSlash} from 'react-icons/bs'
 import {RiSlideshow3Fill} from 'react-icons/ri'
 import { useDisclosure } from 'hooks'
@@ -110,17 +111,22 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({project}) => {
           <Typography>{project.shortDescription}</Typography>
           <Stack spacing={2} alignItems="center" direction='row'>
             
-            <Link href={project.liveUrl} target="_blank" color="#fff">
-              <IconButton aria-label="View Project" color="inherit" size='large'>
-                <RiSlideshow3Fill fontSize="25"/>
-              </IconButton>
-            </Link>
+            <Tooltip title="View Demo">
+              <Link href={project.liveUrl} target="_blank" color="#fff">
+                <IconButton aria-label="View Demo" color="inherit" size='large'>
+                  <RiSlideshow3Fill fontSize="25"/>
+                </IconButton>
+              </Link>
+            </Tooltip>
 
-            <Link href={project.githubRepo} target="_blank" color="#fff">
-              <IconButton aria-label="View Code" color="inherit" size='large'>
-                <BsCodeSlash fontSize="25"/>
-              </IconButton>
-            </Link>
+
+            <Tooltip title="View Code">
+              <Link href={project.githubRepo} target="_blank" color="#fff">
+                <IconButton aria-label="View Code" color="inherit" size='large'>
+                  <BsCodeSlash fontSize="25"/>
+                </IconButton>
+              </Link>
+            </Tooltip>
 
           </Stack>
           <Button variant="contained" color="secondary" size="small" onClick={onOpen}>View Details</Button>

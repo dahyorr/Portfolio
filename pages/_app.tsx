@@ -1,16 +1,17 @@
 import 'styles/global.scss'
 import type { AppProps } from 'next/app'
 import Layout from '@/components/Layout'
-import { AnimatePresence } from 'framer-motion'
+// import { AnimatePresence } from 'framer-motion'
 import Head from 'next/head'
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "@/helpers/theme";
 import SectionContextProvider from 'context/SectionContext';
 import { useRouter } from 'next/router'
+import Preloader from 'components/Preloader'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
-
+  
   return (
     <ThemeProvider theme={theme}>
       <SectionContextProvider>
@@ -54,6 +55,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <meta property='og:image' content='https://dayo.dev/apple-touch-icon.png' />
 
           </Head>
+        <Preloader />
         <Layout forceTransparencyDisable={router.pathname !== '/'}>
           
           {/* <AnimatePresence exitBeforeEnter onExitComplete={() => window.scrollTo(0, 0)}> */}
