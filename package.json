@@ -19,6 +19,7 @@
     "framer-motion": "^6.3.0",
     "next": "^12.1.5",
     "next-transpile-modules": "^9.0.0",
+    "notistack": "^2.0.4",
     "react": "^18.0.0",
     "react-device-detect": "^2.2.2",
     "react-dom": "^18.0.0",
@@ -26,7 +27,6 @@
     "react-image-gallery": "^1.2.7",
     "react-tsparticles": "^2.0.5",
     "sass": "^1.39.2",
-    "swiper": "^8.1.4",
     "tsparticles": "^2.0.5",
     "tsparticles-engine": "^2.0.5",
     "yup": "^0.32.11"

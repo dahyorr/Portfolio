@@ -1,2 +1,79 @@
-# Just a test
-A ticketing system for the event industry. This is a full stack application that allows users to create events, sell tickets, and manage their orders. The application is built with React, Node, Express, MongoDB, and Stripe. The application is deployed on Heroku.
+import IconButton from '@mui/material/IconButton'
+import Tooltip from '@mui/material/Tooltip';
+import Link from '@mui/material/Link';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import SvgIcon from '@mui/material/SvgIcon';
+import {BsCodeSlash} from 'react-icons/bs'
+import {RiSlideshow3Fill} from 'react-icons/ri'
+import SassIcon from 'assets/sass.svg'
+import DjangoIcon from 'assets/django.svg'
+import PostgresqlIcon from 'assets/postgresql.svg'
+import DockerIcon from 'assets/docker.svg'
+import JavascriptIcon from 'assets/javascript.svg'
+import PythonIcon from 'assets/python.svg'
+
+
+# News App
+
+Fetches latest news from the hacker news API at a specified interval, store it in the databas and shows information about the article as well as link to it.
+Its also equiped with an API for manually creating news articles
+
+  <Tooltip title="View Demo">
+    <Link href="https://news.dayo.dev" target="_blank" color="#fff">
+      <IconButton aria-label="View Demo" color="inherit" size='large'>
+        <RiSlideshow3Fill fontSize="25"/>
+      </IconButton>
+    </Link>
+  </Tooltip>
+
+
+  <Tooltip title="View Code">
+    <Link href="https://github.com/dahyorr/News-App" target="_blank" color="#fff">
+      <IconButton aria-label="View Code" color="inherit" size='large'>
+        <BsCodeSlash fontSize="25"/>
+      </IconButton>
+    </Link>
+  </Tooltip>
+
+
+## Technologies used
+
+<List>
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={PythonIcon} inheritViewBox/>
+    </ListItemIcon>
+    <ListItemText primary="Python" />
+  </ListItem>
+
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={DjangoIcon} inheritViewBox size={1}/>
+    </ListItemIcon>
+    <ListItemText primary="Django" />
+  </ListItem>
+
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={JavascriptIcon} inheritViewBox/>
+    </ListItemIcon>
+    <ListItemText primary="Javascript" />
+  </ListItem>
+
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={SassIcon} inheritViewBox/>
+    </ListItemIcon>
+    <ListItemText primary="Sass" />
+  </ListItem>
+
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={PostgresqlIcon} inheritViewBox/>
+    </ListItemIcon>
+    <ListItemText primary="Postgresql" />
+  </ListItem>
+</List>

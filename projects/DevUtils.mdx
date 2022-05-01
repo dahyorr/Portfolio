@@ -1,2 +1,113 @@
-# Just a test
-A ticketing system for the event industry. This is a full stack application that allows users to create events, sell tickets, and manage their orders. The application is built with React, Node, Express, MongoDB, and Stripe. The application is deployed on Heroku.
+import IconButton from '@mui/material/IconButton'
+import Tooltip from '@mui/material/Tooltip';
+import Link from '@mui/material/Link';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import SvgIcon from '@mui/material/SvgIcon';
+import {BsCodeSlash} from 'react-icons/bs'
+import {RiSlideshow3Fill} from 'react-icons/ri'
+import ReactIcon from 'assets/react.svg'
+import ViteIcon from 'assets/vite.svg'
+import MaterialUiIcon from 'assets/material-ui.svg'
+import NestIcon from 'assets/nestjs.svg'
+import RedisIcon from 'assets/redis.svg'
+import RabbitmqIcon from 'assets/rabbitmq.svg'
+import DockerIcon from 'assets/docker.svg'
+import TypescriptIcon from 'assets/typescript.svg'
+import PythonIcon from 'assets/python.svg'
+
+
+# DevUtils
+
+__NOTE: Still in progress__
+
+A collection of useful utilities for developers.
+
+  <Tooltip title="View Demo">
+    <Link href="https://devutils.dayo.dev" target="_blank" color="#fff">
+      <IconButton aria-label="View Demo" color="inherit" size='large'>
+        <RiSlideshow3Fill fontSize="25"/>
+      </IconButton>
+    </Link>
+  </Tooltip>
+
+
+  <Tooltip title="View Code">
+    <Link href="https://github.com/dahyorr/DevUtils" target="_blank" color="#fff">
+      <IconButton aria-label="View Code" color="inherit" size='large'>
+        <BsCodeSlash fontSize="25"/>
+      </IconButton>
+    </Link>
+  </Tooltip>
+
+
+## Technologies used
+
+<List>
+  
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={TypescriptIcon} inheritViewBox/>
+    </ListItemIcon>
+    <ListItemText primary="Typescript" />
+  </ListItem>
+
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={ReactIcon} inheritViewBox/>
+    </ListItemIcon>
+    <ListItemText primary="React" />
+  </ListItem>
+
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={NestIcon} inheritViewBox/>
+    </ListItemIcon>
+    <ListItemText primary="Nest Js" />
+  </ListItem>
+    
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={PythonIcon} inheritViewBox/>
+    </ListItemIcon>
+    <ListItemText primary="Python" />
+  </ListItem>
+
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={ViteIcon} inheritViewBox/>
+    </ListItemIcon>
+    <ListItemText primary="Vite" />
+  </ListItem>
+
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={MaterialUiIcon} inheritViewBox/>
+    </ListItemIcon>
+    <ListItemText primary="Material UI" />
+  </ListItem>
+
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={RedisIcon} inheritViewBox/>
+    </ListItemIcon>
+    <ListItemText primary="Redis" />
+  </ListItem>
+
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={RabbitmqIcon} inheritViewBox/>
+    </ListItemIcon>
+    <ListItemText primary="Rabbit Mq" />
+  </ListItem>
+
+    <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={DockerIcon} inheritViewBox/>
+    </ListItemIcon>
+    <ListItemText primary="Docker" />
+  </ListItem>
+
+</List>

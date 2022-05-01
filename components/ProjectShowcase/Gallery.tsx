@@ -1,7 +1,7 @@
 import React from 'react'
 import Box from '@mui/material/Box';
-// import Image from 'next/image'
-// import dynamic from 'next/dynamic';
+import {useTheme} from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import ImageGallery from 'react-image-gallery';
 import { generateImageUrl } from '@/helpers/cloudinary';
 
@@ -10,6 +10,9 @@ interface GalleryProps {
 }
 
 const Gallery: React.FC<GalleryProps> = ({images}) => {
+  const theme = useTheme();
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down('lg'));
+
   const imageItems = images.map(imageId => ({
     original: generateImageUrl(imageId, 'medium'),
     thumbnail: generateImageUrl(imageId, 'thumbnail'),
@@ -17,10 +20,15 @@ const Gallery: React.FC<GalleryProps> = ({images}) => {
   }))
 
   return (
-    <Box height="100%" width='100%' display="flex" alignItems="center">
+    <Box 
+      height="100%" 
+      width='100%' 
+      display="flex" 
+      alignItems="center"
+    >
       <ImageGallery 
         items={imageItems}
-        showNav={true}
+        showNav={!isMediumScreen}
         showPlayButton={false}
       />
     </Box>

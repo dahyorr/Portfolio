@@ -1,2 +1,94 @@
-# Just a test
-A ticketing system for the event industry. This is a full stack application that allows users to create events, sell tickets, and manage their orders. The application is built with React, Node, Express, MongoDB, and Stripe. The application is deployed on Heroku.
+import IconButton from '@mui/material/IconButton'
+import Tooltip from '@mui/material/Tooltip';
+import Link from '@mui/material/Link';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import SvgIcon from '@mui/material/SvgIcon';
+import {BsCodeSlash} from 'react-icons/bs'
+import {RiSlideshow3Fill} from 'react-icons/ri'
+import ReactIcon from 'assets/react.svg'
+import SassIcon from 'assets/sass.svg'
+import DjangoIcon from 'assets/django.svg'
+import PostgresqlIcon from 'assets/postgresql.svg'
+import DockerIcon from 'assets/docker.svg'
+import TypescriptIcon from 'assets/typescript.svg'
+import PythonIcon from 'assets/python.svg'
+
+
+# Ticketrr
+
+A very basic helpdesk ticket logging system for internal issue management.
+
+  <Tooltip title="View Demo">
+    <Link href="https://ticketrr.dayo.dev" target="_blank" color="#fff">
+      <IconButton aria-label="View Demo" color="inherit" size='large'>
+        <RiSlideshow3Fill fontSize="25"/>
+      </IconButton>
+    </Link>
+  </Tooltip>
+
+
+  <Tooltip title="View Code">
+    <Link href="https://github.com/dahyorr/ticket-system" target="_blank" color="#fff">
+      <IconButton aria-label="View Code" color="inherit" size='large'>
+        <BsCodeSlash fontSize="25"/>
+      </IconButton>
+    </Link>
+  </Tooltip>
+
+
+## Technologies used
+
+<List>
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={PythonIcon} inheritViewBox/>
+    </ListItemIcon>
+    <ListItemText primary="Python" />
+  </ListItem>
+
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={DjangoIcon} inheritViewBox size={1}/>
+    </ListItemIcon>
+    <ListItemText primary="Django" />
+  </ListItem>
+
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={TypescriptIcon} inheritViewBox/>
+    </ListItemIcon>
+    <ListItemText primary="Typescript" />
+  </ListItem>
+
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={ReactIcon} inheritViewBox/>
+    </ListItemIcon>
+    <ListItemText primary="React" />
+  </ListItem>
+
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={SassIcon} inheritViewBox/>
+    </ListItemIcon>
+    <ListItemText primary="Sass" />
+  </ListItem>
+
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={PostgresqlIcon} inheritViewBox/>
+    </ListItemIcon>
+    <ListItemText primary="Postgresql" />
+  </ListItem>
+
+    <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={DockerIcon} inheritViewBox/>
+    </ListItemIcon>
+    <ListItemText primary="Docker" />
+  </ListItem>
+
+</List>

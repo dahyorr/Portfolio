@@ -49,10 +49,10 @@ const About: React.FC = () => {
               color="white"
               align="center"
             >
-              Hi im Dayo. Nice to meet you.
+              Hi i&apos;m Dayo. Nice to meet you.
               </Typography>
             <Typography color="white" align='justify' mb={2}>
-              I&apos;m A Full-Stack Developer from Lagos, Nigeria,
+              I&apos;m A self taught Full-Stack Developer from Lagos, Nigeria, and
               ... fill in more content
             </Typography>
             <Link href="/resume.pdf" download color="inherit" underline="none">

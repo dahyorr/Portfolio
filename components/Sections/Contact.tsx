@@ -55,8 +55,8 @@ const Contact: React.FC = () => {
                 <Paper
                     sx={{
                         width: '100%',
-                        // bgcolor: 'amaranth.main',
-                        bgcolor: '#f4f5fe',
+                        bgcolor: '#fff',
+                        // bgcolor: '#f4f5fe',
                         color: '#fff',
                         py: 10,
                         mb: 10,

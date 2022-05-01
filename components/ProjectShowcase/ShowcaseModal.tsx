@@ -54,7 +54,7 @@ const ShowcaseModal: React.FC<ShowcaseModalProps> = ({handleClose, open, images,
           <AiOutlineClose/>
         </IconButton>
 
-        <Stack height="87.5vh" direction={isMediumScreen ? 'column' :'row'}>
+        <Stack height="95vh" direction={isMediumScreen ? 'column' :'row'}>
           
         <Box 
           height={isMediumScreen ? "60%" : "100%"} 
