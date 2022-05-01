@@ -5,7 +5,7 @@ import React from 'react'
 import Navbar from '../Navbar'
 import GlobalStyles from '@mui/material/GlobalStyles';
 import {isMobile} from 'react-device-detect';
-import Footer from '@/components/Sections/Footer'
+import Footer from '@/components/Footer'
 
 interface LayoutProps{
   forceTransparencyDisable?: boolean;

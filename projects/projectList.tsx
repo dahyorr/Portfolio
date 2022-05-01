@@ -5,6 +5,20 @@ import {Project} from 'typings'
 
 export const projectList: Project[] = [
   {
+    title: 'DevUtils',
+    shortDescription: 'A Collection of useful tools for developers.',
+    description: <DevUtils/>,
+    images: [
+      'devutils/1.png',
+      'devutils/2.png',
+      'devutils/3.png',
+      'devutils/4.png',
+    ],
+    githubRepo: 'https://github.com/dahyorr/DevUtils',
+    liveUrl: 'https://devutils.dayo.dev',
+    inProgress: true,
+  },
+  {
     title: 'Ticketrr',
     shortDescription: 'A basic helpdesk ticket system.',
     description: <Ticketrr/>,
@@ -30,19 +44,5 @@ export const projectList: Project[] = [
     githubRepo: 'https://github.com/dahyorr/News-App',
     liveUrl: 'https://news.dayo.dev',
     inProgress: false,
-  },
-  {
-    title: 'DevUtils',
-    shortDescription: 'A Collection of useful tools for developers.',
-    description: <DevUtils/>,
-    images: [
-      'devutils/1.png',
-      'devutils/2.png',
-      'devutils/3.png',
-      'devutils/4.png',
-    ],
-    githubRepo: 'https://github.com/dahyorr/DevUtils',
-    liveUrl: 'https://devutils.dayo.dev',
-    inProgress: true,
-  },
+  }
 ]
