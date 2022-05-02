@@ -8,6 +8,7 @@ import { theme } from "@/helpers/theme";
 import SectionContextProvider from 'context/SectionContext';
 import { useRouter } from 'next/router'
 // import Preloader from 'components/Preloader'
+import { SnackbarProvider } from 'notistack';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -56,12 +57,20 @@ function MyApp({ Component, pageProps }: AppProps) {
 
           </Head>
         {/* <Preloader /> */}
-        <Layout forceTransparencyDisable={router.pathname !== '/'}>
-          
-          {/* <AnimatePresence exitBeforeEnter onExitComplete={() => window.scrollTo(0, 0)}> */}
-            <Component {...pageProps} />
-          {/* </AnimatePresence> */}
-        </Layout>
+        <SnackbarProvider 
+          maxSnack={3} 
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'center',
+          }}
+        >
+          <Layout forceTransparencyDisable={router.pathname !== '/'}>
+            
+            {/* <AnimatePresence exitBeforeEnter onExitComplete={() => window.scrollTo(0, 0)}> */}
+              <Component {...pageProps} />
+            {/* </AnimatePresence> */}
+          </Layout>
+        </SnackbarProvider>
       </SectionContextProvider>
     </ThemeProvider>
   )

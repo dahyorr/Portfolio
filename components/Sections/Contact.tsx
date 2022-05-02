@@ -1,18 +1,23 @@
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
-import Stack from '@mui/material/Stack'
+// import Stack from '@mui/material/Stack'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
-import Button from '@mui/material/Button'
+import LoadingButton from '@mui/lab/LoadingButton'
 import Paper from '@mui/material/Paper'
 import PageSection from '../PageSection'
 import {useFormik} from 'formik'
 import * as yup from 'yup'
 import {sendMessage} from 'api/sendMessage'
 import { MessageRequestBody } from 'typings'
+import {useState} from 'react'
+import {useSnackbar} from 'notistack'
+import {FiSend} from 'react-icons/fi'
 
 const Contact: React.FC = () => {
+    const [loading, setLoading] = useState(false)
+    const {enqueueSnackbar} = useSnackbar()
     
     const validationSchema = yup.object().shape({
         email: yup.string().email().required(),
@@ -29,17 +34,22 @@ const Contact: React.FC = () => {
     }
 
     const onFormSubmit = (values: MessageRequestBody) => {
-        // show Loader
+        setLoading(true)
         sendMessage(values)
             .then(() => {
-                // show success message
+                enqueueSnackbar("Message sent successfully", {
+                    variant: 'success',
+                })
+                formik.resetForm()
             })
             .catch(err => {
                 console.log(err)
-                // Show error occured message
+                enqueueSnackbar(err.message, {
+                    variant: 'error'
+                })
             })
             .finally(() => {
-                // stopLoading
+                setLoading(false)
             })
     }
 
@@ -48,6 +58,7 @@ const Contact: React.FC = () => {
         validationSchema,
         onSubmit: onFormSubmit,
     })
+
 
     return (
         <PageSection title="contact" disablePy fitContent>
@@ -138,15 +149,18 @@ const Contact: React.FC = () => {
                                 </Grid>
                             </Grid>
                         
-                        <Button 
+                        <LoadingButton 
                             variant="outlined" 
                             type="submit" 
                             size="large"
                             sx={{
                                 mx: 'auto',
                                 mt: 4,
+                                
                             }}
-                        >Send Message</Button>
+                            endIcon={<FiSend />}
+                            loading={loading}
+                        >Send Message</LoadingButton>
                     </Container>
                 </Paper>
             </Box>
