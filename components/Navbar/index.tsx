@@ -65,8 +65,10 @@ const Navbar: React.FC<NavbarProps> = ({forceTransparencyDisable}) => {
           borderRadius: isMediumScreen ? 0 : 1,
           '&.Mui-selected': {
             backgroundColor: 'primary.main',
+            color: '#fff',
             "&:hover": {
               backgroundColor: 'primary.main',
+              color: '#fff'
             }
           }
         }}
@@ -131,6 +133,7 @@ const Navbar: React.FC<NavbarProps> = ({forceTransparencyDisable}) => {
                   !isMediumScreen
                   ? linkMap
                   :<IconButton 
+                    aria-label="menu"
                     disableRipple
                     sx={{
                       color: textColor,

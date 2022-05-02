@@ -70,7 +70,7 @@ const Footer = () => {
           </Link>
         </Stack>
         <Typography 
-          color="rgba(255,255,255,0.3)"
+          color="#fff"
           align="center"
         >Dayo Adebanjo &copy; 2022</Typography>
       </Stack>

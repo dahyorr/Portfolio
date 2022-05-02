@@ -7,6 +7,7 @@ import Paper from '@mui/material/Paper'
 import Divider from '@mui/material/Divider';
 import SvgIcon from '@mui/material/SvgIcon'
 import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
 import Link from '@mui/material/Link'
 import ListItemText from '@mui/material/ListItemText'
 import Button from '@mui/material/Button'
@@ -93,7 +94,7 @@ const About: React.FC = () => {
           <Box 
             display="flex" 
             justifyContent={'space-between'}  
-            alignItems="center" 
+            alignItems={isSmallScreen ? 'center' : "flex-start"} 
             minHeight="16rem" 
             flexDirection={isSmallScreen ? 'column' : 'row'}
           >
@@ -106,33 +107,37 @@ const About: React.FC = () => {
                   <Typography color="primary" align='center' variant="h5">Languages</Typography>
                   <List>
                     {skillList.languages.map((skill) => (
-                      <ListItemText 
-                        key={skill}
-                        primaryTypographyProps={{align: 'center'}}
-                      >
-                        {skill}
-                      </ListItemText>
+                      <ListItem key={skill} disablePadding>
+                        <ListItemText 
+                          primaryTypographyProps={{align: 'center'}}
+                        >
+                          {skill}
+                        </ListItemText>
+                      </ListItem>
                     ))}
                   </List>
                 </Box>
                 
                 <Box>
                   <Typography color="primary" variant="h5" align='center'>Frameworks</Typography>
+                  <List>
                   {skillList.frameworks.map((skill) => (
+                    <ListItem key={skill} disablePadding>
                       <ListItemText 
-                        key={skill}
                         primaryTypographyProps={{align: 'center'}}
                       >
                         {skill}
                       </ListItemText>
+                    </ListItem>
                     ))}
+                  </List>
                 </Box>
               </Stack>
             </Stack>
             
             <Divider orientation={isSmallScreen ? "horizontal" : "vertical"} flexItem />
 
-            <Stack width="50%" alignItems="center" py="1rem">
+            <Stack width="50%" alignItems="center" justifyContent="flex-start" py="1rem">
               <SvgIcon color="primary" component={ToolsIcon} inheritViewBox sx={{ fontSize: 70 }}/>
               <Typography variant="h4" mb={2} align="center">My Dev Tools</Typography>
 
@@ -141,12 +146,13 @@ const About: React.FC = () => {
                 <Typography color="primary" variant="h5" align='center'>Services</Typography>
                 <List>
                 {skillList.cloudServices.map((skill) => (
+                  <ListItem key={skill} disablePadding>
                     <ListItemText 
-                      key={skill}
                       primaryTypographyProps={{align: 'center'}}
                     >
                       {skill}
                     </ListItemText>
+                  </ListItem>
                   ))}
                 </List>
               </Box>
@@ -155,13 +161,14 @@ const About: React.FC = () => {
                 <Typography color="primary" variant="h5" align='center'>Others</Typography>
                 <List>
                 {skillList.others.map((skill) => (
+                  <ListItem key={skill} disablePadding>
                     <ListItemText 
-                      key={skill}
                       primaryTypographyProps={{align: 'center'}}
                     >
                       {skill}
                     </ListItemText>
-                  ))}
+                  </ListItem>
+                ))}
                 </List>
               </Box>
               </Stack>

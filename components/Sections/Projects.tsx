@@ -16,7 +16,7 @@ const Portfolio: React.FC = () => {
                     {projectList.map(project => (
                     <Grid item xs={12} sm={6} md={4} key={project.title}>
                         <ProjectShowcase project={project}/>
-                        <Typography variant="h5" align="center" my={1}>{project.title}</Typography>
+                        <Typography variant="h4" align="center" my={1}>{project.title}</Typography>
                     </Grid>
                     ))}
                 </Grid>
