@@ -56,10 +56,7 @@ const About: React.FC = () => {
             <Typography color="white" align='justify' mb={2} fontSize={18}>
               I&apos;m A self taught Full-Stack Developer from Lagos, Nigeria, I&apos;m passionate about building web applications, solving problems and
               bringing ideas to life. I also love to learn about new technologies and enhancing my skills.<br/>
-              When i&apos;m not buzzing around with code, I usually enjoy playing video games, watching some of my favourite movies/tv shows and ocassionally hanging out with friends. 
             </Typography>
-
-            <Typography color="white" align='center' mb={2} fontSize={18}>I think i&apos;m capable of whatever I set my mind to do 🙃</Typography>
             
             <Link href="/resume.pdf" download color="inherit" underline="none">
               <Button 
