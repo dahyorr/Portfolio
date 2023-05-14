@@ -15,6 +15,7 @@ import NextLink from 'next/link'
 import NavDrawer from './NavDrawer'
 import { List } from '@mui/material'
 import { useSection } from 'hooks'
+import { laBelleAurore } from '@/helpers/theme'
 
 interface NavbarProps {
   forceTransparencyDisable: boolean;
@@ -122,7 +123,7 @@ const Navbar: React.FC<NavbarProps> = ({forceTransparencyDisable}) => {
               color: 'secondary.main',  
             }}>
               <Typography
-                fontFamily={"La Belle Aurore"}
+                fontFamily={laBelleAurore.style.fontFamily}
                 variant={ isSmallScreen ? "h4": 'h2'}
                 color={textColor}
               >

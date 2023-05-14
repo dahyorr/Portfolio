@@ -1,5 +1,21 @@
-import { createTheme} from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 // import {grey} from '@mui/material/colors'
+import { Josefin_Sans, La_Belle_Aurore } from 'next/font/google';
+
+
+export const josefinSans = Josefin_Sans({
+    weight: ['300', '400', '500', '700'],
+    subsets: ['latin'],
+    display: 'swap',
+    fallback: ['Helvetica', 'Arial', 'sans-serif'],
+});
+
+export const laBelleAurore = La_Belle_Aurore({
+    weight: ['400'],
+    subsets: ['latin'],
+    display: 'swap',
+    fallback: ['Helvetica', 'Arial', 'sans-serif'],
+});
 
 declare module '@mui/material/styles' {
     interface Palette {
@@ -19,7 +35,7 @@ export const theme = createTheme({
     palette: {
         mode: 'light',
         primary: {
-            main:'#4169e1',
+            main: '#4169e1',
             contrastText: "#ffffff"
         },
         secondary: {
@@ -55,8 +71,8 @@ export const theme = createTheme({
                 }
             }
         },
-        MuiOutlinedInput:{
-            styleOverrides:{
+        MuiOutlinedInput: {
+            styleOverrides: {
                 root: {
                     background: 'white'
                     // '&.Mui-disabled': {
@@ -68,7 +84,7 @@ export const theme = createTheme({
     },
 
     typography: {
-        fontFamily: 'josefin sans, Arial',
+        fontFamily: josefinSans.style.fontFamily,
         h1: {
             fontWeight: 600,
             fontSize: '3rem',
