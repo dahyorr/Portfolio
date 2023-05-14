@@ -72,7 +72,7 @@ const Footer = () => {
         <Typography 
           color="#fff"
           align="center"
-        >Dayo Adebanjo &copy; 2022</Typography>
+        >Dayo Adebanjo &copy; {new Date().getFullYear()}</Typography>
       </Stack>
     </Container>
   </Box>

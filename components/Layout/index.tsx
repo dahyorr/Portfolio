@@ -1,7 +1,7 @@
 import CssBaseline from '@mui/material/CssBaseline'
 import useMediaQuery from '@mui/material/useMediaQuery';
 import {useTheme} from '@mui/material/styles';
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 import Navbar from '../Navbar'
 import GlobalStyles from '@mui/material/GlobalStyles';
 import {isMobile} from 'react-device-detect';
@@ -11,7 +11,7 @@ interface LayoutProps{
   forceTransparencyDisable?: boolean;
 }
 
-const Layout: React.FC<LayoutProps> = ({children, forceTransparencyDisable}) => {
+const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({children, forceTransparencyDisable}) => {
   const theme = useTheme();
   // const scrollBoxRef = useRef<HTMLDivElement>(null);
   // const cursorRef = useRef<HTMLDivElement>(null);

@@ -1,4 +1,5 @@
 import {motion } from 'framer-motion'
+import React,{ PropsWithChildren } from 'react'
 
 const variants = {
     hidden: { opacity: 0, x: -200, y: 0 },
@@ -6,7 +7,7 @@ const variants = {
     exit: { opacity: 0, x: 0, y: -500 },
 }
 
-const AnimationWrapper: React.FC = ({children}) => {
+const AnimationWrapper: React.FC<PropsWithChildren> = ({children}) => {
     return (
         <motion.main
             variants={variants}

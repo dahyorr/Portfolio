@@ -85,7 +85,7 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({project}) => {
           }
         }}>
           <Image 
-            layout="fill" 
+            fill
             quality={100} 
             src={generateImageUrl(project.images[0], 'small')} 
             alt={project.title} 

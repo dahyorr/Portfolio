@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 
 interface State{
   section: string | null,
@@ -12,7 +12,7 @@ const initialState: State = {
 
 export const SectionContext = React.createContext(initialState)
 
-const SectionContextProvider: React.FC = ({children}) => {
+const SectionContextProvider: React.FC<PropsWithChildren> = ({children}) => {
   const [section, setSection] = React.useState<string | null>(null)
 
   return (

@@ -12,12 +12,18 @@ class MyDocument extends Document{
 					<link rel="preconnect" href="https://fonts.googleapis.com"/>
 					<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=''/>
 					<link 
-						href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;700&family=Permanent+Marker&family=La+Belle+Aurore&display=swap" 
+						href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;700&family=Permanent+Marker&family=La+Belle+Aurore&display=optional" 
 						rel="stylesheet"
 					/>
 				</Head>
 
 				<body>
+					<noscript>
+						<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLFGRTZ" height="0" width="0" style={{
+							display:"none",
+							visibility:"hidden"
+						}}></iframe>
+					</noscript>
 					<Main />
 					<NextScript />
 				</body>

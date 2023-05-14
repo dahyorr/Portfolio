@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 
 interface NavDrawerProps{
@@ -6,7 +6,7 @@ interface NavDrawerProps{
   toggleDrawer: (value: boolean) => void;
 }
 
-const NavDrawer: React.FC<NavDrawerProps> = ({open, toggleDrawer, children}) => {
+const NavDrawer: React.FC<PropsWithChildren<NavDrawerProps>> = ({open, toggleDrawer, children}) => {
   return (
     <SwipeableDrawer
       anchor={'right'}

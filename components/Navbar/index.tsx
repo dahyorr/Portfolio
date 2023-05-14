@@ -58,7 +58,7 @@ const Navbar: React.FC<NavbarProps> = ({forceTransparencyDisable}) => {
   }, [isMediumScreen, forceTransparencyDisable])
 
   const linkMap = links.map(({id, title, href}) => (
-    <NextLink href={href} key={id} passHref>
+    <NextLink href={href} key={id} legacyBehavior passHref>
       <ListItemButton 
         selected={section === id}
         sx={{
