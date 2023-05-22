@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
                 enqueueSnackbar("Message sent successfully", {
                     variant: 'success',
                 })
-                // formik.resetForm()
+                formik.resetForm()
             })
             .catch(err => {
                 console.log(err)
