@@ -10,22 +10,23 @@ import { useRouter } from 'next/router'
 // import Preloader from 'components/Preloader'
 import { SnackbarProvider } from 'notistack';
 import Script from 'next/script';
+import { Analytics } from '@vercel/analytics/react';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
   return (
-  <>
-    <Script id="google-tag-manager" strategy="afterInteractive">
-      {`
+    <>
+      <Script id="google-tag-manager" strategy="afterInteractive">
+        {`
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-MLFGRTZ');
       `}
-    </Script>
-    <Script
+      </Script>
+      <Script
         strategy="afterInteractive"
         id="clarity-track"
         dangerouslySetInnerHTML={{
@@ -36,9 +37,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         })(window, document, "clarity", "script", "h3w1a5mofn");`
         }}
       />
-    <ThemeProvider theme={theme}>
-      <SectionContextProvider>
-      <Head>
+      <ThemeProvider theme={theme}>
+        <SectionContextProvider>
+          <Head>
             <title>Dayo Adebanjo</title>
             <meta name="viewport" content="initial-scale=1, width=device-width" />
             <meta name="description" content="Personal portfolio of Dayo Adebanjo" />
@@ -61,9 +62,9 @@ function MyApp({ Component, pageProps }: AppProps) {
             <link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
             <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
             <link rel='manifest' href='/manifest.json' />
-            <link rel='mask-icon' href='/favicon.ico'/>
+            <link rel='mask-icon' href='/favicon.ico' />
             <link rel='shortcut icon' href='/favicon.ico' />
-                
+
             <meta name='twitter:card' content='Personal portfolio of Dayo Adebanjo' />
             <meta name='twitter:url' content='https://dayo.dev' />
             <meta name='twitter:title' content="Dayo's Portfolio" />
@@ -78,24 +79,25 @@ function MyApp({ Component, pageProps }: AppProps) {
             <meta property='og:image' content='https://dayo.dev/apple-touch-icon.png' />
 
           </Head>
-        {/* <Preloader /> */}
-        <SnackbarProvider 
-          maxSnack={3} 
-          anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'center',
-          }}
-        >
-          <Layout forceTransparencyDisable={router.pathname !== '/'}>
-            
-            {/* <AnimatePresence exitBeforeEnter onExitComplete={() => window.scrollTo(0, 0)}> */}
+          {/* <Preloader /> */}
+          <SnackbarProvider
+            maxSnack={3}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'center',
+            }}
+          >
+            <Layout forceTransparencyDisable={router.pathname !== '/'}>
+
+              {/* <AnimatePresence exitBeforeEnter onExitComplete={() => window.scrollTo(0, 0)}> */}
               <Component {...pageProps} />
-            {/* </AnimatePresence> */}
-          </Layout>
-        </SnackbarProvider>
-      </SectionContextProvider>
-    </ThemeProvider>
-  </>
+              {/* </AnimatePresence> */}
+            </Layout>
+          </SnackbarProvider>
+        </SectionContextProvider>
+      </ThemeProvider>
+      <Analytics />
+    </>
   )
 }
 export default MyApp
