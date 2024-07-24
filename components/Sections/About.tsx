@@ -58,7 +58,7 @@ const About: React.FC = () => {
               bringing ideas to life. I also love learning about new technologies and enhancing my skills.<br />
             </Typography>
 
-            <Link href="/adedayo-adebanjo-resume.pdf" download color="inherit" underline="none">
+            <Link href="/Adedayo_Adebanjo_Resume.pdf" download color="inherit" underline="none">
               <Button
                 variant="contained"
                 color="secondary"
