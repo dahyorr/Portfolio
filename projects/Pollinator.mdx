@@ -1,0 +1,101 @@
+import IconButton from '@mui/material/IconButton'
+import Tooltip from '@mui/material/Tooltip';
+import Link from '@mui/material/Link';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import SvgIcon from '@mui/material/SvgIcon';
+import {BsCodeSlash} from 'react-icons/bs'
+import {RiSlideshow3Fill} from 'react-icons/ri'
+import ReactIcon from 'assets/react.svg'
+import NextIcon from 'assets/next.svg'
+import DockerIcon from 'assets/docker.svg'
+import TypescriptIcon from 'assets/typescript.svg'
+import GoLangIcon from 'assets/go-logo-blue.svg'
+import SupabaseIcon from 'assets/supabase.svg'
+import GoFiberIcon from 'assets/gofiber.svg'
+import PostgresqlIcon from 'assets/postgresql.svg'
+
+
+# Pollinator
+
+A simple application that allows users to create and vote on polls. Users can create polls with multiple options and share them with others. The application is built with Next.js, Golang and Supabase.
+
+  <Tooltip title="View Demo">
+    <Link href="https://poll.dayo.dev" target="_blank" color="#fff">
+      <IconButton aria-label="View Demo" color="inherit" size='large'>
+        <RiSlideshow3Fill fontSize="25"/>
+      </IconButton>
+    </Link>
+  </Tooltip>
+
+
+  <Tooltip title="View Code">
+    <Link href="https://github.com/dahyorr/pollinator" target="_blank" color="#fff">
+      <IconButton aria-label="View Code" color="inherit" size='large'>
+        <BsCodeSlash fontSize="25"/>
+      </IconButton>
+    </Link>
+  </Tooltip>
+
+
+## Technologies used
+
+<List>
+  
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={TypescriptIcon} inheritViewBox/>
+    </ListItemIcon>
+    <ListItemText primary="Typescript" />
+  </ListItem>
+      
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={NextIcon} inheritViewBox color="#ffffff"/>
+    </ListItemIcon>
+    <ListItemText primary="Next.js" />
+  </ListItem>
+
+
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={GoLangIcon} viewBox='0 0 24 24' sx={{w: '24px', h:'24px'}} />
+      
+    </ListItemIcon>
+    <ListItemText primary="GoLang" />
+  </ListItem>
+
+    <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={GoFiberIcon} />
+    </ListItemIcon>
+    <ListItemText primary="Fiber" />
+  </ListItem>
+
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={SupabaseIcon} sx={{w: '24px', h:'24px'}}/>
+    </ListItemIcon>
+    <ListItemText primary="Supabase" />
+  </ListItem>
+
+
+    <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={DockerIcon} inheritViewBox/>
+    </ListItemIcon>
+    <ListItemText primary="Docker" />
+  </ListItem>
+
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={PostgresqlIcon} inheritViewBox/>
+    </ListItemIcon>
+    <ListItemText primary="Postgresql" />
+  </ListItem>
+
+
+
+</List>

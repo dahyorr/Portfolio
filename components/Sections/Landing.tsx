@@ -1,12 +1,8 @@
-import { useCallback } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import NextLink from 'next/link'
-import Box, { BoxProps } from '@mui/material/Box'
+import Box from '@mui/material/Box'
 import PageSection from '../PageSection'
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
-import { ISourceOptions } from 'tsparticles-engine';
-import type { Engine } from "tsparticles-engine";
-import particlesOptions from '../../helpers/particles.json'
+import particlesOptions from '../../helpers/particles'
 import Typography from '@mui/material/Typography'
 import Stack from '@mui/material/Stack'
 import Button from '@mui/material/Button'
@@ -17,13 +13,27 @@ import { useTheme } from '@mui/material/styles';
 import { BiMailSend } from 'react-icons/bi'
 import { AiFillGithub, AiOutlineTwitter, AiFillLinkedin, AiFillMail } from 'react-icons/ai'
 import socialLinks from 'helpers/socials.json'
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim"
+import { Container, ISourceOptions } from '@tsparticles/engine';
 
 const Landing: React.FC = () => {
+  const [init, setInit] = useState(false);
   const theme = useTheme();
   const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl'));
 
-  const particlesInit = useCallback(async (engine: Engine) => {
-    loadFull(engine);
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+      // starting from v2 you can add only the features you need reducing the bundle size
+      //await loadAll(engine);
+      //await loadFull(engine);
+      await loadSlim(engine);
+      //await loadBasic(engine);
+    }).then(() => {
+      setInit(true);
+    });
   }, []);
 
   return (
@@ -93,13 +103,10 @@ const Landing: React.FC = () => {
         </IconButton>
       </Stack>)}
 
-      <Particles
+      {init && (<Particles
         id="landing-background"
         options={particlesOptions as ISourceOptions}
-        init={particlesInit}
-        width="100%"
-        height="100%"
-      />
+      />)}
       <Box
         sx={{
           display: 'flex',

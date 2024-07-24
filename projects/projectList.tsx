@@ -1,9 +1,24 @@
 import Ticketrr from './Ticketrr.mdx';
 import News from './News.mdx';
 import DevUtils from './DevUtils.mdx';
+import Pollinator from './Pollinator.mdx';
 import {Project} from 'typings'
 
 export const projectList: Project[] = [
+  {
+    title: 'Pollinator',
+    shortDescription: 'A simple application that allows users to create and vote on polls.',
+    description: <Pollinator/>,
+    images: [
+      'pollinator/1.png',
+      'pollinator/2.png',
+      'pollinator/3.png',
+      'pollinator/4.png',
+    ],
+    githubRepo: 'https://github.com/dahyorr/pollinator',
+    liveUrl: 'https://poll.dayo.dev',
+    inProgress: true,
+  },
   {
     title: 'DevUtils',
     shortDescription: 'A Collection of useful tools for developers.',
