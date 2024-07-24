@@ -10,6 +10,7 @@ import { FaLinkedinIn } from 'react-icons/fa'
 import socialLinks from 'helpers/socials.json'
 import { Link } from '@mui/material';
 import { laBelleAurore } from '@/helpers/theme';
+import { forwardRef } from 'react';
 
 const StyledIconButton = styled(IconButton)<ButtonBaseProps>(({ theme }) => ({
   border: '2px solid rgba(255, 255, 255, 0.3)',
@@ -34,7 +35,7 @@ const Footer = () => {
           >D</Typography>
           <Stack direction="row" alignItems='center' justifyContent={"center"} spacing={2}>
             <Link
-              component={StyledIconButton}
+              component={StyledIconButton as any}
               href={socialLinks.github}
               aria-label="github"
               target="_blank"
@@ -43,7 +44,7 @@ const Footer = () => {
               <AiFillGithub />
             </Link>
             <Link
-              component={StyledIconButton}
+              component={StyledIconButton as any}
               href={socialLinks.twitter}
               aria-label="twitter"
               target="_blank"
@@ -52,7 +53,7 @@ const Footer = () => {
               <AiOutlineTwitter />
             </Link>
             <Link
-              component={StyledIconButton}
+              component={StyledIconButton as any}
               href={socialLinks.linkedin}
               aria-label="linkedin"
               target="_blank"
@@ -61,7 +62,7 @@ const Footer = () => {
               <FaLinkedinIn />
             </Link>
             <Link
-              component={StyledIconButton}
+              component={StyledIconButton as any}
               href={socialLinks.mailTo}
               aria-label="mail"
               target="_blank"
