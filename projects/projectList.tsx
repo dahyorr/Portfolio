@@ -2,13 +2,14 @@ import Ticketrr from './Ticketrr.mdx';
 import News from './News.mdx';
 import DevUtils from './DevUtils.mdx';
 import Pollinator from './Pollinator.mdx';
-import {Project} from 'typings'
+import DecodeMyEmoji from './decode-my-emoji.mdx';
+import { Project } from 'typings'
 
 export const projectList: Project[] = [
   {
     title: 'Pollinator',
     shortDescription: 'A simple application that allows users to create and vote on polls.',
-    description: <Pollinator/>,
+    description: <Pollinator />,
     images: [
       'pollinator/1.png',
       'pollinator/2.png',
@@ -22,7 +23,7 @@ export const projectList: Project[] = [
   {
     title: 'DevUtils',
     shortDescription: 'A Collection of useful tools for developers.',
-    description: <DevUtils/>,
+    description: <DevUtils />,
     images: [
       'devutils/1.png',
       'devutils/2.png',
@@ -36,7 +37,7 @@ export const projectList: Project[] = [
   {
     title: 'Ticketrr',
     shortDescription: 'A basic helpdesk ticket system.',
-    description: <Ticketrr/>,
+    description: <Ticketrr />,
     images: [
       'ticketrr/1.png',
       'ticketrr/2.png',
@@ -50,9 +51,21 @@ export const projectList: Project[] = [
     inProgress: false,
   },
   {
+    title: 'Decode My Emoji',
+    shortDescription: 'A simple application that allows users to decode emoji meanings.',
+    description: <DecodeMyEmoji />,
+    images: [
+      'decode-my-emoji/1.png',
+      'decode-my-emoji/2.png',
+    ],
+    // githubRepo: 'https://github.com/dahyorr/News-App',
+    liveUrl: 'https://decode-my-emoji.vercel.app/',
+    inProgress: false,
+  },
+  {
     title: 'News App',
     shortDescription: 'Stores and links to news articles retrived from hacker news API.',
-    description: <News/>,
+    description: <News />,
     images: [
       'news/1.png',
     ],

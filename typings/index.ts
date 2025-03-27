@@ -10,7 +10,7 @@ export interface Project{
   description: JSX.Element,
   shortDescription: string,
   images: string[],
-  githubRepo: string,
+  githubRepo?: string,
   liveUrl: string,
   inProgress: boolean,
 }
