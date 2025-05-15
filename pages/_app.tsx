@@ -11,6 +11,7 @@ import { useRouter } from 'next/router'
 import { SnackbarProvider } from 'notistack';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -97,6 +98,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </SectionContextProvider>
       </ThemeProvider>
       <Analytics />
+      <SpeedInsights/>
     </>
   )
 }
