@@ -140,30 +140,30 @@ const Landing: React.FC = () => {
           </Typography>
 
           <Stack sx={{ flexDirection: 'row', mt: 4 }}>
-            <NextLink href="#contact" passHref>
-              <Button
-                variant="contained"
-                size="large"
-                endIcon={<BiMailSend color="#fff" />}
-                sx={{ py: 2, px: 4, color: 'white', mr: 2 }}
-              >
-                Contact Me
-              </Button>
-            </NextLink>
+            <Button
+              component={NextLink}
+              href="#contact"
+              variant="contained"
+              size="large"
+              endIcon={<BiMailSend color="#fff" />}
+              sx={{ py: 2, px: 4, color: 'white', mr: 2 }}
+            >
+              Contact Me
+            </Button>
 
-            <NextLink href="#about" passHref>
-              <Button
-                variant="outlined"
-                size="large"
-                sx={{
-                  color: 'white',
-                  py: 2,
-                  px: 4,
-                }}
-              >
-                About me
-              </Button>
-            </NextLink>
+            <Button
+              component={NextLink}
+              href="#about"
+              variant="outlined"
+              size="large"
+              sx={{
+                color: 'white',
+                py: 2,
+                px: 4,
+              }}
+            >
+              About me
+            </Button>
           </Stack>
         </Stack>
 

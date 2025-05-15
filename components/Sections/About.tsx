@@ -23,10 +23,10 @@ const About: React.FC = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   const skillList = {
-    languages: ["TypeScript", 'JavaScript', 'Python', "Go", 'Graphql', "C#"],
+    languages: ["TypeScript", 'JavaScript', 'Python', "Go", "Rust"],
     frameworks: ['Next.js', 'Django', "FastAPI", 'Express', 'Nest.js', "GoFiber"],
-    cloudServices: ['AWS', 'Firebase', 'Vercel', 'Supabase'],
-    others: ['Docker', 'Postgres', 'Mongo Db', 'Redis'],
+    cloudServices: ['AWS', "GCP", 'Firebase', 'Vercel', 'Supabase'],
+    others: ['Docker', 'Postgres', 'Mongo Db', 'Redis', 'Graphql', "Node.js", 'Tailwind CSS'],
   }
 
   return (
@@ -97,11 +97,11 @@ const About: React.FC = () => {
           >
             <Stack width="50%" alignItems="center" py="1rem">
               <SvgIcon color="primary" component={CodeIcon} inheritViewBox sx={{ fontSize: 70 }} />
-              <Typography variant="h4" align="center" mb={2}>Languages And Skills</Typography>
+              <Typography variant="h3" align="center" mb={2}>Languages And Skills</Typography>
 
               <Stack direction="row" spacing={8}>
                 <Box>
-                  <Typography color="primary" align='center' variant="h5">Languages</Typography>
+                  <Typography color="primary" align='center' variant="h4">Languages</Typography>
                   <List>
                     {skillList.languages.map((skill) => (
                       <ListItem key={skill} disablePadding>
@@ -116,7 +116,7 @@ const About: React.FC = () => {
                 </Box>
 
                 <Box>
-                  <Typography color="primary" variant="h5" align='center'>Frameworks</Typography>
+                  <Typography color="primary" variant="h4" align='center'>Frameworks</Typography>
                   <List>
                     {skillList.frameworks.map((skill) => (
                       <ListItem key={skill} disablePadding>
@@ -136,11 +136,11 @@ const About: React.FC = () => {
 
             <Stack width="50%" alignItems="center" justifyContent="flex-start" py="1rem">
               <SvgIcon color="primary" component={ToolsIcon} inheritViewBox sx={{ fontSize: 70 }} />
-              <Typography variant="h4" mb={2} align="center">My Dev Tools</Typography>
+              <Typography variant="h3" mb={2} align="center">My Dev Tools</Typography>
 
               <Stack direction='row' spacing={8}>
                 <Box>
-                  <Typography color="primary" variant="h5" align='center'>Services</Typography>
+                  <Typography color="primary" variant="h4" align='center'>Services</Typography>
                   <List>
                     {skillList.cloudServices.map((skill) => (
                       <ListItem key={skill} disablePadding>
@@ -155,7 +155,7 @@ const About: React.FC = () => {
                 </Box>
 
                 <Box>
-                  <Typography color="primary" variant="h5" align='center'>Others</Typography>
+                  <Typography color="primary" variant="h4" align='center'>Others</Typography>
                   <List>
                     {skillList.others.map((skill) => (
                       <ListItem key={skill} disablePadding>
