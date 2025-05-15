@@ -2,10 +2,27 @@ import Ticketrr from './Ticketrr.mdx';
 import News from './News.mdx';
 import DevUtils from './DevUtils.mdx';
 import Pollinator from './Pollinator.mdx';
+import Duplicast from './Duplicast.mdx';
 import DecodeMyEmoji from './decode-my-emoji.mdx';
 import { Project } from 'typings'
 
 export const projectList: Project[] = [
+  {
+    title: 'Duplicast',
+    shortDescription: 'A simple tool for relaying RTMP video streams to multiple locations',
+    description: <Duplicast />,
+    images: [
+      'duplicast/1.png',
+      'duplicast/2.png',
+      'duplicast/3.png',
+      'duplicast/4.png',
+      'duplicast/5.png',
+      'duplicast/6.png',
+    ],
+    githubRepo: 'https://github.com/dahyorr/duplicast',
+    // liveUrl: 'https://poll.dayo.dev',
+    inProgress: true,
+  },
   {
     title: 'Pollinator',
     shortDescription: 'A simple application that allows users to create and vote on polls.',

@@ -1,0 +1,72 @@
+import IconButton from '@mui/material/IconButton'
+import Tooltip from '@mui/material/Tooltip';
+import Link from '@mui/material/Link';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import SvgIcon from '@mui/material/SvgIcon';
+import {BsCodeSlash} from 'react-icons/bs'
+import {RiSlideshow3Fill} from 'react-icons/ri'
+import ReactIcon from 'assets/react.svg'
+import TauriIcon from 'assets/tauri-24.svg'
+import TypescriptIcon from 'assets/typescript.svg'
+import RustIcon from 'assets/rust-blk-24.svg'
+
+
+
+# Duplicast
+
+Duplicast is a tool for relaying live streams to multiple destinations. It receives an RTMP stream (e.g. from OBS), encodes to h.264, outputs it to HLS for local preview, and forwards the stream to configured relay targets like YouTube, Twitch, and others**.**
+  {/* <Tooltip title="View Demo">
+    <Link href="https://poll.dayo.dev" target="_blank" color="#fff">
+      <IconButton aria-label="View Demo" color="inherit" size='large'>
+        <RiSlideshow3Fill fontSize="25"/>
+      </IconButton>
+    </Link>
+  </Tooltip> */}
+
+
+  <Tooltip title="View Code">
+    <Link href="https://github.com/dahyorr/duplicast" target="_blank" color="#fff">
+      <IconButton aria-label="View Code" color="inherit" size='large'>
+        <BsCodeSlash fontSize="25"/>
+      </IconButton>
+    </Link>
+  </Tooltip>
+
+
+## Technologies used
+
+<List>
+  
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={TypescriptIcon} inheritViewBox/>
+    </ListItemIcon>
+    <ListItemText primary="Typescript" />
+  </ListItem>
+      
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={ReactIcon} inheritViewBox color="#ffffff"/>
+    </ListItemIcon>
+    <ListItemText primary="React" />
+  </ListItem>
+
+  <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={RustIcon} />
+    </ListItemIcon>
+    <ListItemText primary="Rust" />
+  </ListItem>
+
+    <ListItem dense>
+    <ListItemIcon>
+      <SvgIcon component={TauriIcon} />
+    </ListItemIcon>
+    <ListItemText primary="Tauri" />
+  </ListItem>
+
+</List>
+ 

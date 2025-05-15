@@ -112,13 +112,13 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ project }) => {
           <Typography>{project.shortDescription}</Typography>
           <Stack spacing={2} alignItems="center" direction='row'>
 
-            <Tooltip title="View Demo">
+            {project.liveUrl && (<Tooltip title="View Demo">
               <Link href={project.liveUrl} target="_blank" color="#fff">
                 <IconButton aria-label="View Demo" color="inherit" size='large'>
                   <RiSlideshow3Fill fontSize="25" />
                 </IconButton>
               </Link>
-            </Tooltip>
+            </Tooltip>)}
 
 
             {project.githubRepo && (<Tooltip title="View Code">

@@ -11,6 +11,6 @@ export interface Project{
   shortDescription: string,
   images: string[],
   githubRepo?: string,
-  liveUrl: string,
+  liveUrl?: string,
   inProgress: boolean,
 }
