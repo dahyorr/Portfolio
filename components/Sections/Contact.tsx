@@ -1,10 +1,9 @@
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
-// import Stack from '@mui/material/Stack'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
-import LoadingButton from '@mui/lab/LoadingButton'
+import Button from '@mui/material/Button'
 import Paper from '@mui/material/Paper'
 import PageSection from '../PageSection'
 import { useFormik } from 'formik'
@@ -90,7 +89,7 @@ const Contact: React.FC = () => {
                         }}
                     >
                         <Grid container spacing={2}>
-                            <Grid item xs={12} sm={6}>
+                            <Grid size={{ xs: 12, sm: 6 }}>
                                 <TextField
                                     name='name'
                                     label='Name'
@@ -104,7 +103,7 @@ const Contact: React.FC = () => {
                                 // color="white"
                                 />
                             </Grid>
-                            <Grid item xs={12} sm={6}>
+                            <Grid size={{ xs: 12, sm: 6 }}>
                                 <TextField
                                     name='email'
                                     label='Email'
@@ -117,7 +116,7 @@ const Contact: React.FC = () => {
                                     onChange={formik.handleChange}
                                 />
                             </Grid>
-                            <Grid item xs={12}>
+                            <Grid size={{ xs: 12 }}>
                                 <TextField
                                     name='subject'
                                     label='Subject'
@@ -131,7 +130,7 @@ const Contact: React.FC = () => {
                                 />
                             </Grid>
 
-                            <Grid item xs={12}>
+                            <Grid size={{ xs: 12 }}>
                                 <TextField
                                     multiline
                                     minRows={3}
@@ -149,7 +148,7 @@ const Contact: React.FC = () => {
                             </Grid>
                         </Grid>
 
-                        <LoadingButton
+                        <Button
                             variant="outlined"
                             type="submit"
                             size="large"
@@ -160,7 +159,7 @@ const Contact: React.FC = () => {
                             }}
                             endIcon={<FiSend />}
                             loading={loading}
-                        >Send Message</LoadingButton>
+                        >Send Message</Button>
                     </Container>
                 </Paper>
             </Box>

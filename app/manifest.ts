@@ -1,0 +1,26 @@
+import type { MetadataRoute } from 'next'
+
+export default function manifest(): MetadataRoute.Manifest {
+  return {
+    name: "Dayo's Portfolio",
+    short_name: 'Dayo🙃',
+    description: 'A Progressive Web App built with Next.js',
+    icons: [
+      {
+        src: '/android-chrome-192x192.png',
+        sizes: '192x192',
+        type: 'image/png',
+      },
+      {
+        src: '/android-chrome-512x512.png',
+        sizes: '512x512',
+        type: 'image/png',
+      },
+    ],
+    theme_color: '#4169e1',
+    background_color: '#F4F5FE',
+    display: 'standalone',
+    start_url: '/',
+    orientation: 'portrait',
+  }
+}
