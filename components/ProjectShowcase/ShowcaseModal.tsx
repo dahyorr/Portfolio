@@ -1,5 +1,5 @@
 "use client"
-import React, { JSX } from 'react'
+import React from 'react'
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 // import Button from '@mui/material/Button';
@@ -15,7 +15,7 @@ interface ShowcaseModalProps {
   handleClose: () => void;
   open: boolean;
   images: string[];
-  description: JSX.Element;
+  description: React.ReactNode;
 }
 
 const ShowcaseModal: React.FC<ShowcaseModalProps> = ({handleClose, open, images, description}) => {

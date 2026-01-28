@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface MessageRequestBody{
   message: string;
   email: string;
@@ -7,7 +9,7 @@ export interface MessageRequestBody{
 
 export interface Project{
   title: string,
-  description: JSX.Element,
+  description: ReactNode,
   shortDescription: string,
   images: string[],
   githubRepo?: string,
