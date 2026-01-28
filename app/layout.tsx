@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: 'Dayo🙃',  
+    title: 'Dayo🙃',
   },
   formatDetection: {
     telephone: false,
@@ -115,12 +115,12 @@ export default function RootLayout({
           })(window, document, "clarity", "script", "h3w1a5mofn");`
           }}
         />
-          <SectionContextProvider>
+        <SectionContextProvider>
 
-              <Layout forceTransparencyDisable={false}>
-                {children}
-              </Layout>
-          </SectionContextProvider>
+          <Layout forceTransparencyDisable={false}>
+            {children}
+          </Layout>
+        </SectionContextProvider>
         <Analytics />
         <SpeedInsights />
       </body>
