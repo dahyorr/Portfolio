@@ -6,11 +6,15 @@ import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata, Viewport } from 'next'
+import Portfolio from "@/components/Sections/Projects";
 
 export const metadata: Metadata = {
-  title: 'Dayo Adebanjo',
-  description: 'Personal portfolio of Dayo Adebanjo',
-  applicationName: 'PWA App',
+  title: 'Dayo Adebanjo | Full-Stack Developer',
+  description: 'Full-Stack Developer specializing in TypeScript, Next.js, Go, and Python. Building scalable web applications with modern technologies. Based in Leeds, UK.',
+  keywords: ['Full-Stack Developer', 'TypeScript', 'Next.js', 'React', 'Go', 'Python', 'Web Development', 'Leeds', 'United Kingdom', 'Software Engineer', 'Dayo Adebanjo'],
+  authors: [{ name: 'Dayo Adebanjo' }],
+  creator: 'Dayo Adebanjo',
+  applicationName: "Dayo's Portfolio",
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
@@ -23,21 +27,24 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://dayo.dev'),
   openGraph: {
     type: 'website',
-    title: "Dayo's Portfolio",
-    description: 'Personal portfolio of Dayo Adebanjo',
+    title: "Dayo Adebanjo | Full-Stack Developer",
+    description: 'Full-Stack Developer specializing in TypeScript, Next.js, Go, and Python. Building scalable web applications with modern technologies.',
     siteName: 'Dayo Adebanjo',
     url: 'https://dayo.dev',
+    locale: 'en_US',
     images: [
       {
         url: 'https://dayo.dev/apple-touch-icon.png',
-        alt: "Dayo's Portfolio",
+        width: 180,
+        height: 180,
+        alt: "Dayo Adebanjo - Full-Stack Developer",
       },
     ],
   },
   twitter: {
-    card: 'summary',
-    title: "Dayo's Portfolio",
-    description: 'Personal portfolio of Dayo Adebanjo',
+    card: 'summary_large_image',
+    title: "Dayo Adebanjo | Full-Stack Developer",
+    description: 'Full-Stack Developer specializing in TypeScript, Next.js, Go, and Python. Building scalable web applications.',
     creator: '@dah_yor',
     images: ['https://dayo.dev/android-chrome-192x192.png'],
   },
@@ -84,6 +91,39 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: 'Dayo Adebanjo',
+              jobTitle: 'Full-Stack Developer',
+              url: 'https://dayo.dev',
+              sameAs: [
+                'https://github.com/dahyorr',
+                'https://twitter.com/dah_yor',
+                'https://www.linkedin.com/in/dayo-adebanjo',
+              ],
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Leeds',
+                addressCountry: 'United Kingdom',
+              },
+              knowsAbout: [
+                'TypeScript',
+                'JavaScript',
+                'Python',
+                'Go',
+                'Rust',
+                'Next.js',
+                'React',
+                'Web Development',
+                'Full-Stack Development',
+              ],
+            }),
+          }}
+        />
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-MLFGRTZ"

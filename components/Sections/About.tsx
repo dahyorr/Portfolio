@@ -52,11 +52,12 @@ const About: React.FC = () => {
               align="center"
               mb={2}
             >
-              Hi i&apos;m Dayo
+              Hi, I&apos;m Dayo
             </Typography>
-            <Typography color="white" align='justify' mb={2} fontSize={18}>
-              I&apos;m A self taught Full-Stack Developer from Lagos, Nigeria, I&apos;m passionate about building web applications, solving problems and
-              bringing ideas to life. I also love learning about new technologies and enhancing my skills.<br />
+            <Typography color="white" align='center' mb={2} fontSize={18} maxWidth="800px">
+              I&apos;m a self-taught Full-Stack Developer Based in Leeds, UK, with 5 years of experience building scalable web applications.
+              I specialize in creating performant, user-centric solutions using modern technologies like TypeScript, Next.js, and Go.
+              From conceptualization to deployment, I&apos;m passionate about transforming ideas into production-ready applications that solve real-world problems.
             </Typography>
 
             <Link href="/Adedayo_Adebanjo_Resume.pdf" download color="inherit" underline="none">
@@ -96,7 +97,7 @@ const About: React.FC = () => {
             minHeight="16rem"
             flexDirection={isSmallScreen ? 'column' : 'row'}
           >
-            <Stack width="50%" alignItems="center" py="1rem">
+            <Stack width={{ xs: '100%', md: '50%' }} alignItems="center" py="1rem">
               <SvgIcon color="primary" component={CodeIcon} inheritViewBox sx={{ fontSize: 70 }} />
               <Typography variant="h3" align="center" mb={2}>Languages And Skills</Typography>
 
@@ -135,7 +136,7 @@ const About: React.FC = () => {
 
             <Divider orientation={isSmallScreen ? "horizontal" : "vertical"} flexItem />
 
-            <Stack width="50%" alignItems="center" justifyContent="flex-start" py="1rem">
+            <Stack width={{ xs: '100%', md: '50%' }} alignItems="center" justifyContent="flex-start" py="1rem">
               <SvgIcon color="primary" component={ToolsIcon} inheritViewBox sx={{ fontSize: 70 }} />
               <Typography variant="h3" mb={2} align="center">My Dev Tools</Typography>
 

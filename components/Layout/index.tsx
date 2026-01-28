@@ -62,8 +62,24 @@ const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({ children, forceTrans
               },
               scrollSnapType: 'y mandatory',
               overflowY: 'scroll',
+              '.skip-link': {
+                position: 'absolute',
+                top: '-40px',
+                left: 0,
+                background: theme.palette.primary.main,
+                color: 'white',
+                padding: '8px 16px',
+                textDecoration: 'none',
+                zIndex: 9999,
+                '&:focus': {
+                  top: 0,
+                },
+              },
             }}
           />
+          <a href="#main-content" className="skip-link">
+            Skip to main content
+          </a>
           <Navbar forceTransparencyDisable={forceTransparencyDisable || false} />
           {children}
           <Footer />

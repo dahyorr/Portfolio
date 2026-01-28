@@ -54,7 +54,7 @@ const Landing: React.FC = () => {
           component={Link}
           href={socialLinks.github}
           target="_blank"
-          aria-label="github"
+          aria-label="Visit Dayo's GitHub profile"
         >
           <AiFillGithub color="white" />
         </IconButton>
@@ -62,7 +62,7 @@ const Landing: React.FC = () => {
           component={Link}
           href={socialLinks.twitter}
           target="_blank"
-          aria-label="twitter"
+          aria-label="Visit Dayo's Twitter profile"
         >
           <AiOutlineTwitter color="white" />
         </IconButton>
@@ -71,7 +71,7 @@ const Landing: React.FC = () => {
           component={Link}
           href={socialLinks.linkedin}
           target="_blank"
-          aria-label="linkedin"
+          aria-label="Visit Dayo's LinkedIn profile"
         >
           <AiFillLinkedin color="white" />
         </IconButton>
@@ -80,7 +80,7 @@ const Landing: React.FC = () => {
           component={Link}
           href={socialLinks.mailTo}
           target="_blank"
-          aria-label="mail"
+          aria-label="Send an email to Dayo"
         >
           <AiFillMail color="white" />
         </IconButton>
@@ -105,15 +105,14 @@ const Landing: React.FC = () => {
           </Typography>
           <Typography
             color="primary"
-            // variant="h1"
-            fontSize="7.5rem"
+            fontSize={{ xs: '4rem', sm: '5.5rem', md: '7.5rem' }}
             fontWeight={700}
           >
             Dayo
           </Typography>
           <Typography
             color="white"
-            fontSize="3.4rem"
+            fontSize={{ xs: '1.8rem', sm: '2.5rem', md: '3.4rem' }}
             fontWeight={700}
           >
             Full-Stack Web Developer
