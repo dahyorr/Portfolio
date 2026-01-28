@@ -5,7 +5,6 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import SvgIcon from '@mui/material/SvgIcon';
 import {BsCodeSlash} from 'react-icons/bs'
 import {RiSlideshow3Fill} from 'react-icons/ri'
 import ReactIcon from 'assets/react.svg'
@@ -46,14 +45,14 @@ A simple application that allows users to create and vote on polls. Users can cr
   
   <ListItem dense>
     <ListItemIcon>
-      <SvgIcon component={TypescriptIcon} inheritViewBox/>
+      <TypescriptIcon width={24} height={24} style={{ color: 'inherit' }} />   
     </ListItemIcon>
     <ListItemText primary="Typescript" />
   </ListItem>
       
   <ListItem dense>
     <ListItemIcon>
-      <SvgIcon component={NextIcon} inheritViewBox color="#ffffff"/>
+      <NextIcon width={24} height={24} style={{ color: 'inherit' }} />   
     </ListItemIcon>
     <ListItemText primary="Next.js" />
   </ListItem>
@@ -61,22 +60,21 @@ A simple application that allows users to create and vote on polls. Users can cr
 
   <ListItem dense>
     <ListItemIcon>
-      <SvgIcon component={GoLangIcon} viewBox='0 0 24 24' sx={{w: '24px', h:'24px'}} />
-      
+      <GoLangIcon width={24} height={24} style={{ color: 'inherit' }} />   
     </ListItemIcon>
     <ListItemText primary="GoLang" />
   </ListItem>
 
     <ListItem dense>
     <ListItemIcon>
-      <SvgIcon component={GoFiberIcon} />
+      <GoFiberIcon width={24} height={24} style={{ color: 'inherit' }} />   
     </ListItemIcon>
     <ListItemText primary="Fiber" />
   </ListItem>
 
   <ListItem dense>
     <ListItemIcon>
-      <SvgIcon component={SupabaseIcon} sx={{w: '24px', h:'24px'}}/>
+      <SupabaseIcon width={24} height={24} style={{ color: 'inherit' }} />   
     </ListItemIcon>
     <ListItemText primary="Supabase" />
   </ListItem>
@@ -84,14 +82,14 @@ A simple application that allows users to create and vote on polls. Users can cr
 
     <ListItem dense>
     <ListItemIcon>
-      <SvgIcon component={DockerIcon} inheritViewBox/>
+      <DockerIcon width={24} height={24} style={{ color: 'inherit' }} />   
     </ListItemIcon>
     <ListItemText primary="Docker" />
   </ListItem>
 
   <ListItem dense>
     <ListItemIcon>
-      <SvgIcon component={PostgresqlIcon} inheritViewBox/>
+      <PostgresqlIcon width={24} height={24} style={{ color: 'inherit' }} />   
     </ListItemIcon>
     <ListItemText primary="Postgresql" />
   </ListItem>

@@ -326,28 +326,52 @@ const options = {
       "options": {
         "image": [
           {
-            "name": "cloud"
+            "name": "cloud",
+            "src": "icons/cloud-service.png",
+            "width": 32,
+            "height": 32
           },
           {
-            "name": "webdev"
+            "name": "webdev",
+            "src": "icons/web-development.png",
+            "width": 32,
+            "height": 32
           },
           {
-            "name": "computer"
+            "name": "computer",
+            "src": "icons/computer.png",
+            "width": 32,
+            "height": 32
           },
           {
-            "name": "maintenance"
+            "name": "maintenance",
+            "src": "icons/maintenance.png",
+            "width": 32,
+            "height": 32
           },
           {
-            "name": "clapperboard"
+            "name": "clapperboard",
+            "src": "icons/clapperboard.png",
+            "width": 32,
+            "height": 32
           },
           {
-            "name": "console"
+            "name": "console",
+            "src": "icons/console.png",
+            "width": 32,
+            "height": 32
           },
           {
-            "name": "fastfood"
+            "name": "fastfood",
+            "src": "icons/fast-food.png",
+            "width": 32,
+            "height": 32
           },
           {
-            "name": "sports"
+            "name": "sports",
+            "src": "icons/sports.png",
+            "width": 32,
+            "height": 32
           }
         ]
       },
@@ -520,64 +544,64 @@ const options = {
   "themes": [],
   "zLayers": 100,
   "name": "Images",
-  "preload": [
-    {
-      "src": "icons/cloud-service.png",
-      "gif": false,
-      "height": 32,
-      "name": "cloud",
-      "width": 32
-    },
-    {
-      "src": "icons/web-development.png",
-      "gif": false,
-      "height": 32,
-      "name": "webdev",
-      "width": 32
-    },
-    {
-      "src": "icons/computer.png",
-      "gif": false,
-      "height": 32,
-      "name": "computer",
-      "width": 32
-    },
-    {
-      "src": "icons/maintenance.png",
-      "gif": false,
-      "height": 32,
-      "name": "maintenance",
-      "width": 32
-    },
-    {
-      "src": "icons/clapperboard.png",
-      "gif": false,
-      "height": 32,
-      "name": "clapperboard",
-      "width": 32
-    },
-    {
-      "src": "icons/console.png",
-      "gif": false,
-      "height": 32,
-      "name": "console",
-      "width": 32
-    },
-    {
-      "src": "icons/fast-food.png",
-      "gif": false,
-      "height": 32,
-      "name": "fastfood",
-      "width": 32
-    },
-    {
-      "src": "icons/sports.png",
-      "gif": false,
-      "height": 32,
-      "name": "sports",
-      "width": 32
-    },
-  ],
+  // "preload": [
+  //   {
+  //     "src": "icons/cloud-service.png",
+  //     "gif": false,
+  //     "height": 32,
+  //     "name": "cloud",
+  //     "width": 32
+  //   },
+  //   {
+  //     "src": "icons/web-development.png",
+  //     "gif": false,
+  //     "height": 32,
+  //     "name": "webdev",
+  //     "width": 32
+  //   },
+  //   {
+  //     "src": "icons/computer.png",
+  //     "gif": false,
+  //     "height": 32,
+  //     "name": "computer",
+  //     "width": 32
+  //   },
+  //   {
+  //     "src": "icons/maintenance.png",
+  //     "gif": false,
+  //     "height": 32,
+  //     "name": "maintenance",
+  //     "width": 32
+  //   },
+  //   {
+  //     "src": "icons/clapperboard.png",
+  //     "gif": false,
+  //     "height": 32,
+  //     "name": "clapperboard",
+  //     "width": 32
+  //   },
+  //   {
+  //     "src": "icons/console.png",
+  //     "gif": false,
+  //     "height": 32,
+  //     "name": "console",
+  //     "width": 32
+  //   },
+  //   {
+  //     "src": "icons/fast-food.png",
+  //     "gif": false,
+  //     "height": 32,
+  //     "name": "fastfood",
+  //     "width": 32
+  //   },
+  //   {
+  //     "src": "icons/sports.png",
+  //     "gif": false,
+  //     "height": 32,
+  //     "name": "sports",
+  //     "width": 32
+  //   },
+  // ],
   "motion": {
     "disable": false,
     "reduce": {

@@ -1,8 +1,9 @@
+"use client"
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
-import IconButton, { IconButtonProps } from '@mui/material/IconButton';
+import IconButton from '@mui/material/IconButton';
 import { ButtonBaseProps } from '@mui/material/ButtonBase';
 import { styled } from '@mui/material/styles';
 import { AiFillGithub, AiOutlineTwitter, AiFillMail } from 'react-icons/ai'

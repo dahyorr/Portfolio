@@ -5,7 +5,6 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import SvgIcon from '@mui/material/SvgIcon';
 import {BsCodeSlash} from 'react-icons/bs'
 import {RiSlideshow3Fill} from 'react-icons/ri'
 import ReactIcon from 'assets/react.svg'
@@ -42,28 +41,28 @@ Duplicast is a tool for relaying live streams to multiple destinations. It recei
   
   <ListItem dense>
     <ListItemIcon>
-      <SvgIcon component={TypescriptIcon} inheritViewBox/>
+      <TypescriptIcon width={24} height={24} style={{ color: 'inherit' }} />   
     </ListItemIcon>
     <ListItemText primary="Typescript" />
   </ListItem>
       
   <ListItem dense>
     <ListItemIcon>
-      <SvgIcon component={ReactIcon} inheritViewBox color="#ffffff"/>
+      <ReactIcon width={24} height={24} style={{ color: 'inherit' }} />
     </ListItemIcon>
     <ListItemText primary="React" />
   </ListItem>
 
   <ListItem dense>
     <ListItemIcon>
-      <SvgIcon component={RustIcon} />
+      <RustIcon width={24} height={24} style={{ color: 'inherit' }} /> 
     </ListItemIcon>
     <ListItemText primary="Rust" />
   </ListItem>
 
     <ListItem dense>
     <ListItemIcon>
-      <SvgIcon component={TauriIcon} />
+      <TauriIcon width={24} height={24} style={{ color: 'inherit' }} />
     </ListItemIcon>
     <ListItemText primary="Tauri" />
   </ListItem>
