@@ -1,3 +1,4 @@
+"use client"
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import TextField from '@mui/material/TextField'

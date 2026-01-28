@@ -14,7 +14,7 @@ const Portfolio: React.FC = () => {
                 <Typography variant="body1" fontSize={'1.1rem'} align="center" mb={2}>Here are some of my recent projects</Typography>
                 <Grid container spacing={4} wrap='wrap'>
                     {projectList.map(project => (
-                    <Grid item xs={12} sm={6} md={4} key={project.title}>
+                    <Grid size={{xs: 12, sm: 6, md: 4}} key={project.title}>
                         <ProjectShowcase project={project}/>
                         <Typography variant="h4" align="center" my={1}>{project.title}</Typography>
                     </Grid>

@@ -1,9 +1,8 @@
-import React from 'react'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import Paper from '@mui/material/Paper'
 
-const OfflinePage = () => {
+export default function NotFound() {
   return (
     <Box sx={{
       height: 'calc(100vh - 200px)',
@@ -11,19 +10,17 @@ const OfflinePage = () => {
       alignItems: 'center',
       justifyContent: 'center',
     }}>
-      <Paper 
+      <Paper
         sx={{
-          textAlign:'center',
+          textAlign: 'center',
           px: 10,
           py: 10,
         }}
-        >
-        <Typography variant="h2">Offline</Typography>
+      >
+        <Typography variant="h2">404</Typography>
         <Typography variant="h5">Whoops!</Typography>
-        <Typography fontSize="18">Maybe someone pulled plug ?</Typography>
+        <Typography fontSize="18">How did you get here ?</Typography>
       </Paper>
     </Box>
   )
 }
-
-export default OfflinePage

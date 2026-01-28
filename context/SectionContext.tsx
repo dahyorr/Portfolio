@@ -1,6 +1,7 @@
+'use client'
 import React, { PropsWithChildren } from 'react'
 
-interface State{
+interface State {
   section: string | null,
   setSection: (section: string) => void
 }
@@ -12,11 +13,11 @@ const initialState: State = {
 
 export const SectionContext = React.createContext(initialState)
 
-const SectionContextProvider: React.FC<PropsWithChildren> = ({children}) => {
+const SectionContextProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [section, setSection] = React.useState<string | null>(null)
 
   return (
-    <SectionContext.Provider value={{section, setSection}}>
+    <SectionContext.Provider value={{ section, setSection }}>
       {children}
     </SectionContext.Provider>
   )

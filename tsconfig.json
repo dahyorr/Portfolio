@@ -33,6 +33,15 @@
       ],
       "@/uiStyles/*": [
         "styles/ui/*"
+      ],
+      "@/context/*": [
+        "context/*"
+      ],
+      "@/api/*": [
+        "api/*"
+      ],
+      "@/typings/*": [
+        "typings/*"
       ]
     },
     "incremental": true,
