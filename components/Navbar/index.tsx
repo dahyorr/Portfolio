@@ -17,9 +17,10 @@ import NavDrawer from './NavDrawer'
 import { List } from '@mui/material'
 import { useSection } from 'hooks'
 import { laBelleAurore } from '@/helpers/theme'
+import { usePathname } from 'next/navigation'
 
 interface NavbarProps {
-  forceTransparencyDisable: boolean;
+  forceTransparencyDisable?: boolean;
 }
 
 const Navbar: React.FC<NavbarProps> = ({ forceTransparencyDisable }) => {
@@ -54,13 +55,6 @@ const Navbar: React.FC<NavbarProps> = ({ forceTransparencyDisable }) => {
     document.addEventListener('scroll', onScroll)
     return () => { document?.removeEventListener('scroll', onScroll) }
   })
-
-  useEffect(() => {
-    // Only close drawer when transitioning from mobile to desktop or when transparency changes
-    if (!isMediumScreen && openDrawer) {
-      setOpenDrawer(false)
-    }
-  }, [isMediumScreen, openDrawer])
 
   const linkMap = links.map(({ id, title, href }) => (
     <NextLink href={href} key={id} style={{
@@ -160,7 +154,7 @@ const Navbar: React.FC<NavbarProps> = ({ forceTransparencyDisable }) => {
         </Container>
       </AppBar>
 
-      <NavDrawer open={openDrawer} toggleDrawer={setOpenDrawer}>
+      <NavDrawer open={isMediumScreen && openDrawer} toggleDrawer={setOpenDrawer}>
         {drawerList}
       </NavDrawer>
     </>

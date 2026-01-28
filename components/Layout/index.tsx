@@ -16,10 +16,9 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({ children, forceTransparencyDisable }) => {
-  // const theme = useTheme();
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down('md'));
   // const scrollBoxRef = useRef<HTMLDivElement>(null);
   // const cursorRef = useRef<HTMLDivElement>(null);
-  const isMediumScreen = useMediaQuery(theme.breakpoints.down('lg'));
 
   // useEffect(() => {
   //   const cursor = cursorRef.current;

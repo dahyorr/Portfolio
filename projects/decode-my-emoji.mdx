@@ -1,4 +1,23 @@
-# Decode My Emoji
+import IconButton from '@mui/material/IconButton'
+import Tooltip from '@mui/material/Tooltip';
+import Link from '@mui/material/Link';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import {BsCodeSlash} from 'react-icons/bs'
+import {RiSlideshow3Fill} from 'react-icons/ri'
+import ReactIcon from 'assets/react.svg'
+import NextIcon from 'assets/next.svg'
+import DockerIcon from 'assets/docker.svg'
+import TypescriptIcon from 'assets/typescript.svg'
+import GoLangIcon from 'assets/go-logo-blue.svg'
+import TailwindIcon from 'assets/tailwindcss.svg'
+import DeepseekIcon from 'assets/deepseek.svg'
+import PostgresqlIcon from 'assets/postgresql.svg'
+
+
+# Pollinator
 
 An AI-powered web app that analyzes emoji strings to reveal hidden emotions. Built with Next.js, Tailwind, and DeepSeek.
 
@@ -35,14 +54,14 @@ An AI-powered web app that analyzes emoji strings to reveal hidden emotions. Bui
 
   <ListItem dense>
     <ListItemIcon>
-      <SvgIcon component={TypescriptIcon} inheritViewBox/>
+      <TypescriptIcon width={24} height={24} style={{ color: 'inherit' }} />
     </ListItemIcon>
     <ListItemText primary="Typescript" />
   </ListItem>
       
   <ListItem dense>
     <ListItemIcon>
-      <SvgIcon component={NextIcon} inheritViewBox color="#ffffff"/>
+      <NextIcon width={24} height={24} style={{ color: 'inherit' }} />
     </ListItemIcon>
     <ListItemText primary="Next.js" />
   </ListItem>
@@ -50,7 +69,7 @@ An AI-powered web app that analyzes emoji strings to reveal hidden emotions. Bui
 
   <ListItem dense>
     <ListItemIcon>
-      <SvgIcon component={TailwindIcon} viewBox='0 0 24 24' sx={{w: '24px', h:'24px'}} />
+      <TailwindIcon width={24} height={24} style={{ color: 'inherit' }} />
       
     </ListItemIcon>
     <ListItemText primary="TailwindCSS" />
@@ -58,7 +77,7 @@ An AI-powered web app that analyzes emoji strings to reveal hidden emotions. Bui
 
     <ListItem dense>
     <ListItemIcon>
-      <SvgIcon component={DeepseekIcon} inheritViewBox/>
+      <DeepseekIcon width={24} height={24} style={{ color: 'inherit' }} />
     </ListItemIcon>
     <ListItemText primary="DeepSeek" />
   </ListItem> */}

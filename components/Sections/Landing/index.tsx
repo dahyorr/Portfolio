@@ -2,8 +2,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import NextLink from 'next/link'
 import Box from '@mui/material/Box'
-import PageSection from '../PageSection'
-import particlesOptions from '../../helpers/particles'
+import PageSection from '../../PageSection'
 import Typography from '@mui/material/Typography'
 import Stack from '@mui/material/Stack'
 import Button from '@mui/material/Button'
@@ -14,28 +13,11 @@ import { useTheme } from '@mui/material/styles';
 import { BiMailSend } from 'react-icons/bi'
 import { AiFillGithub, AiOutlineTwitter, AiFillLinkedin, AiFillMail } from 'react-icons/ai'
 import socialLinks from 'helpers/socials.json'
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim"
-import { Container, ISourceOptions } from '@tsparticles/engine';
+import ParticleBackground from './ParticleBackground'
 
 const Landing: React.FC = () => {
-  const [init, setInit] = useState(false);
   const theme = useTheme();
   const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl'));
-
-  useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-      // starting from v2 you can add only the features you need reducing the bundle size
-      //await loadAll(engine);
-      //await loadFull(engine);
-      await loadSlim(engine);
-      //await loadBasic(engine);
-    }).then(() => {
-      setInit(true);
-    });
-  }, []);
 
   return (
     <PageSection
@@ -104,10 +86,7 @@ const Landing: React.FC = () => {
         </IconButton>
       </Stack>)}
 
-      {init && (<Particles
-        id="landing-background"
-        options={particlesOptions as ISourceOptions}
-      />)}
+      <ParticleBackground />
       <Box
         sx={{
           display: 'flex',

@@ -1,3 +1,4 @@
+"use client"
 import { createTheme } from '@mui/material/styles';
 // import {grey} from '@mui/material/colors'
 import { Josefin_Sans, La_Belle_Aurore } from 'next/font/google';
