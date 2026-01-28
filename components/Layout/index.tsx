@@ -77,9 +77,9 @@ const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({ children, forceTrans
               },
             }}
           />
-          <a href="#main-content" className="skip-link">
+          {/* <a href="#main-content" className="skip-link">
             Skip to main content
-          </a>
+          </a> */}
           <Navbar forceTransparencyDisable={forceTransparencyDisable || false} />
           {children}
           <Footer />
