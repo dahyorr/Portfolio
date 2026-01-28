@@ -8,13 +8,13 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import { BsCodeSlash } from 'react-icons/bs'
 import { RiSlideshow3Fill } from 'react-icons/ri'
-import { createSvgIcon } from 'components/Icons/createSvgIcon'
+// import { createSvgIcon } from 'components/Icons/createSvgIcon'
 
 // Import SVG assets
 // import ReactSvg from 'assets/react.svg'
 // import NextSvg from 'assets/next.svg'
 // import DockerSvg from 'assets/docker.svg'
-import TypescriptSvg from 'assets/typescript.svg'
+// import TypescriptIcon from 'assets/typescript.svg'
 // import GoLangSvg from 'assets/go-logo-blue.svg'
 // import TailwindSvg from 'assets/tailwindcss.svg'
 // import DeepseekSvg from 'assets/deepseek.svg'
@@ -36,7 +36,7 @@ import TypescriptSvg from 'assets/typescript.svg'
 // const ReactIcon = createSvgIcon(ReactSvg)
 // const NextIcon = createSvgIcon(NextSvg)
 // const DockerIcon = createSvgIcon(DockerSvg)
-const TypescriptIcon = createSvgIcon(TypescriptSvg)
+// const TypescriptIcon = createSvgIcon(TypescriptSvg)
 // const GoLangIcon = createSvgIcon(GoLangSvg)
 // const TailwindIcon = createSvgIcon(TailwindSvg)
 // const DeepseekIcon = createSvgIcon(DeepseekSvg)
@@ -67,12 +67,11 @@ const components: MDXComponents = {
   // React Icons
   BsCodeSlash,
   RiSlideshow3Fill,
+  // TypescriptIcon,
   // SVG Icons
   // ReactIcon,
   // NextIcon,
   // DockerIcon,
-  TypescriptIcon,
-  TypescriptSvg,
   // GoLangIcon,
   // TailwindIcon,
   // DeepseekIcon,
