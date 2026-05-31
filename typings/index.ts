@@ -1,13 +1,13 @@
 import { ReactNode } from "react";
 
-export interface MessageRequestBody{
+export interface MessageRequestBody {
   message: string;
   email: string;
   subject?: string;
   name: string;
 }
 
-export interface Project{
+export interface Project {
   title: string,
   description: ReactNode,
   shortDescription: string,
