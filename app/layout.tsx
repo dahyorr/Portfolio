@@ -9,7 +9,7 @@ import type { Metadata, Viewport } from 'next'
 import Portfolio from "@/components/Sections/Projects";
 
 export const metadata: Metadata = {
-  title: 'Dayo Adebanjo | Full-Stack Developer',
+  title: 'Dayo Adebanjo | Full-Stack Engineer | Application and Cloud Security',
   description: 'Full-Stack Engineer based in Leeds, UK. 5 years building production web applications in TypeScript, Next.js, Node, and Go. Currently pursuing an MSc in Cybersecurity, focused on application and cloud security.',
   keywords: ['Full-Stack Developer', 'TypeScript', 'Next.js', 'React', 'Go', 'Python', 'Web Development', 'Leeds', 'United Kingdom', 'Software Engineer', 'Dayo Adebanjo', 'Application Security', 'Cloud Security', 'AWS', 'Cybersecurity', 'AppSec'],
   authors: [{ name: 'Dayo Adebanjo' }],
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://dayo.dev'),
   openGraph: {
     type: 'website',
-    title: "Dayo Adebanjo | Full-Stack Developer",
-    description: 'Full-Stack Developer specializing in TypeScript, Next.js, Go, and Python. Building scalable web applications with modern technologies.',
+    title: 'Dayo Adebanjo | Full-Stack Engineer | Application and Cloud Security',
+    description: 'Full-Stack Engineer based in Leeds, UK. 5 years building production web applications in TypeScript, Next.js, Node, and Go. Currently pursuing an MSc in Cybersecurity, focused on application and cloud security.',
     siteName: 'Dayo Adebanjo',
     url: 'https://dayo.dev',
     locale: 'en_US',
@@ -37,14 +37,14 @@ export const metadata: Metadata = {
         url: 'https://dayo.dev/apple-touch-icon.png',
         width: 180,
         height: 180,
-        alt: "Dayo Adebanjo - Full-Stack Developer",
+        alt: "Dayo Adebanjo - Full-Stack Engineer",
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Dayo Adebanjo | Full-Stack Developer",
-    description: 'Full-Stack Developer specializing in TypeScript, Next.js, Go, and Python. Building scalable web applications.',
+    title: "Dayo Adebanjo | Full-Stack Engineer | Application and Cloud Security",
+    description: 'Full-Stack Engineer based in Leeds, UK. 5 years building production web applications in TypeScript, Next.js, Node, and Go. Currently pursuing an MSc in Cybersecurity, focused on application and cloud security.',
     creator: '@dah_yor',
     images: ['https://dayo.dev/android-chrome-192x192.png'],
   },

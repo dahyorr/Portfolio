@@ -21,7 +21,7 @@ import socialLinks from 'helpers/socials.json'
 import BgPattern from './backgrounds/BgPattern'
 // import ParticleBackground from './ParticleBackground'
 
-const TITLES = ['Full-Stack Web Engineer', 'Application and Cloud Security Engineer']
+const TITLES = ['Full-Stack Engineer', 'Application and Cloud Security Engineer']
 
 const Landing: React.FC = () => {
   const theme = useTheme();

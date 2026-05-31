@@ -1,4 +1,4 @@
-import Ticketrr from './Ticketrr.mdx';
+// import Ticketrr from './Ticketrr.mdx';
 // import News from './News.mdx';
 import DevUtils from './DevUtils.mdx';
 import Pollinator from './Pollinator.mdx';
@@ -51,22 +51,22 @@ export const projectList: Project[] = [
     liveUrl: 'https://devutils.dayo.dev',
     inProgress: true,
   },
-  {
-    title: 'Ticketrr',
-    shortDescription: 'A basic helpdesk ticket system.',
-    description: <Ticketrr />,
-    images: [
-      'ticketrr/1.png',
-      'ticketrr/2.png',
-      'ticketrr/3.png',
-      'ticketrr/4.png',
-      'ticketrr/5.png',
-      'ticketrr/6.png'
-    ],
-    githubRepo: 'https://github.com/dahyorr/ticket-system',
-    liveUrl: 'https://ticketrr.dayo.dev',
-    inProgress: false,
-  },
+  // {
+  //   title: 'Ticketrr',
+  //   shortDescription: 'A basic helpdesk ticket system.',
+  //   description: <Ticketrr />,
+  //   images: [
+  //     'ticketrr/1.png',
+  //     'ticketrr/2.png',
+  //     'ticketrr/3.png',
+  //     'ticketrr/4.png',
+  //     'ticketrr/5.png',
+  //     'ticketrr/6.png'
+  //   ],
+  //   githubRepo: 'https://github.com/dahyorr/ticket-system',
+  //   liveUrl: 'https://ticketrr.dayo.dev',
+  //   inProgress: false,
+  // },
   // {
   //   title: 'Decode My Emoji',
   //   shortDescription: 'A simple application that allows users to decode emoji meanings.',
