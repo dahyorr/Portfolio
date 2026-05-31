@@ -13,7 +13,12 @@ import { useTheme } from '@mui/material/styles';
 import { BiMailSend } from 'react-icons/bi'
 import { AiFillGithub, AiOutlineTwitter, AiFillLinkedin, AiFillMail } from 'react-icons/ai'
 import socialLinks from 'helpers/socials.json'
-import PlainBackground from './PlainBackground'
+// import PlainBackground from './PlainBackground'
+// import BgGradient from './backgrounds/BgGradient'
+// import BgAnimated from './backgrounds/BgAnimated'
+// import BgSplit from './backgrounds/BgSplit'
+// import BgMesh from './PlainBackground'
+import BgPattern from './backgrounds/BgPattern'
 // import ParticleBackground from './ParticleBackground'
 
 const TITLES = ['Full-Stack Web Engineer', 'Application and Cloud Security Engineer']
@@ -42,16 +47,6 @@ const Landing: React.FC = () => {
       sx={{
         bgcolor: 'transparent',
         position: 'relative',
-        '& #landing-background': {
-          height: '100%',
-          width: '100%',
-          bgcolor: 'secondary.main',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          zIndex: -1,
-          overflow: 'hidden'
-        }
       }}
     >
       {!isLargeScreen && (<Stack
@@ -102,7 +97,12 @@ const Landing: React.FC = () => {
         </IconButton>
       </Stack>)}
 
-      <PlainBackground />
+      {/* <PlainBackground /> */}
+      {/* <BgGradient /> */}
+      {/* <BgAnimated /> */}
+      {/* <BgSplit /> */}
+      {/* <BgMesh /> */}
+      <BgPattern />
       {/* <ParticleBackground /> */}
       <Box
         sx={{

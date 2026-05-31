@@ -44,7 +44,7 @@ export const theme = extendTheme({
                     contrastText: '#ffffff',
                 },
                 platinium: {
-                    main: '#FFFFFF',
+                    main: '#ECECEC',
                     contrastText: '#1a1a1a',
                 },
                 amaranth: {

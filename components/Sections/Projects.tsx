@@ -14,9 +14,8 @@ const Portfolio: React.FC = () => {
                 height: '100%',
                 pb: 12
             }}>
-                <Typography sx={{
-                    variant: "h3",
-                    align: "center",
+                <Typography variant="h3" sx={{
+                    textAlign: "center",
                     mb: 2
                 }}>My Recent Projects</Typography>
                 <Typography variant="body1" align="center" sx={{ fontSize: '1.1rem', mb: 2 }}>Here are some of my recent projects</Typography>
@@ -24,9 +23,8 @@ const Portfolio: React.FC = () => {
                     {projectList.map(project => (
                         <Grid size={{ xs: 12, sm: 6, md: 4 }} key={project.title}>
                             <ProjectShowcase project={project} />
-                            <Typography sx={{
-                                variant: "h4",
-                                align: "center",
+                            <Typography variant="h4" sx={{
+                                textAlign: "center",
                                 my: 1
                             }}>{project.title}</Typography>
                         </Grid>

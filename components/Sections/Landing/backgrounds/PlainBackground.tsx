@@ -9,4 +9,4 @@
  *   BgPattern   — dot-grid pattern with vignette
  *   BgSplit     — asymmetric diagonal blue wedge on dark navy
  */
-export { default } from './backgrounds/BgMesh';
+export { default } from './BgMesh';
