@@ -11,7 +11,7 @@ import { FaLinkedinIn } from 'react-icons/fa'
 import socialLinks from 'helpers/socials.json'
 import { Link } from '@mui/material';
 import { laBelleAurore } from '@/helpers/theme';
-import { forwardRef } from 'react';
+// import { forwardRef } from 'react';
 
 const StyledIconButton = styled(IconButton)<ButtonBaseProps>(({ theme }) => ({
   border: '2px solid rgba(255, 255, 255, 0.3)',
@@ -24,23 +24,21 @@ const StyledIconButton = styled(IconButton)<ButtonBaseProps>(({ theme }) => ({
 
 const Footer = () => {
   return (
-    <Box bgcolor="primary.main" py={6}>
+    <Box sx={{ py: 6, bgcolor: 'primary.main', color: 'platinium.main' }}>
       <Container maxWidth="md">
         <Stack spacing={2.5}>
           <Typography
-            fontFamily={laBelleAurore.style.fontFamily}
             align="center"
-            fontSize="65px"
-            color="white"
-            lineHeight="2.5rem"
+            color="platinium"
+            sx={{ fontFamily: laBelleAurore.style.fontFamily, fontSize: '65px', lineHeight: '2.5rem' }}
           >D</Typography>
-          <Stack direction="row" alignItems='center' justifyContent={"center"} spacing={2}>
+          <Stack direction="row" spacing={2} sx={{ alignItems: 'center', justifyContent: 'center' }}>
             <Link
               component={StyledIconButton as any}
               href={socialLinks.github}
               aria-label="github"
               target="_blank"
-              color="#fff"
+              color="platinium"
             >
               <AiFillGithub />
             </Link>
@@ -49,7 +47,7 @@ const Footer = () => {
               href={socialLinks.twitter}
               aria-label="twitter"
               target="_blank"
-              color="#fff"
+              color="platinium"
             >
               <AiOutlineTwitter />
             </Link>
@@ -58,7 +56,7 @@ const Footer = () => {
               href={socialLinks.linkedin}
               aria-label="linkedin"
               target="_blank"
-              color="#fff"
+              color="platinium"
             >
               <FaLinkedinIn />
             </Link>
@@ -67,13 +65,13 @@ const Footer = () => {
               href={socialLinks.mailTo}
               aria-label="mail"
               target="_blank"
-              color="#fff"
+              color="platinium"
             >
               <AiFillMail />
             </Link>
           </Stack>
           <Typography
-            color="#fff"
+            color="platinium"
             align="center"
           >Dayo Adebanjo &copy; {new Date().getFullYear()}</Typography>
         </Stack>

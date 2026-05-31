@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2017",
     "lib": [
       "dom",
       "dom.iterable",
@@ -13,35 +13,61 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
     "noImplicitAny": true,
     "noImplicitThis": true,
     "strictNullChecks": true,
-    "baseUrl": ".",
     "paths": {
+      "hooks": [
+        "./hooks"
+      ],
+      "hooks/*": [
+        "./hooks/*"
+      ],
+      "typings": [
+        "./typings"
+      ],
+      "typings/*": [
+        "./typings/*"
+      ],
+      "helpers/*": [
+        "./helpers/*"
+      ],
+      "projects/*": [
+        "./projects/*"
+      ],
+      "context/*": [
+        "./context/*"
+      ],
+      "api/*": [
+        "./api/*"
+      ],
+      "assets/*": [
+        "./assets/*"
+      ],
       "@/components/*": [
-        "components/*"
+        "./components/*"
       ],
       "@/helpers/*": [
-        "helpers/*"
+        "./helpers/*"
       ],
       "@/styles/*": [
-        "styles/*"
+        "./styles/*"
       ],
       "@/uiStyles/*": [
-        "styles/ui/*"
+        "./styles/ui/*"
       ],
       "@/context/*": [
-        "context/*"
+        "./context/*"
       ],
       "@/api/*": [
-        "api/*"
+        "./api/*"
       ],
       "@/typings/*": [
-        "typings/*"
+        "./typings/*"
       ]
     },
     "incremental": true,

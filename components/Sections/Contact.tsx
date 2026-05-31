@@ -14,6 +14,7 @@ import { MessageRequestBody } from 'typings'
 import { useState } from 'react'
 import { useSnackbar } from 'notistack'
 import { FiSend } from 'react-icons/fi'
+import { Link } from '@mui/material'
 
 const Contact: React.FC = () => {
     const [loading, setLoading] = useState(false)
@@ -62,7 +63,7 @@ const Contact: React.FC = () => {
 
     return (
         <PageSection title="contact" disablePy fitContent>
-            <Box width="100%" height="100%" >
+            <Box sx={{ width: '100%', height: '100%' }}>
                 <Paper
                     sx={{
                         width: '100%',
@@ -78,7 +79,12 @@ const Contact: React.FC = () => {
                     }}
                     elevation={6}
                 >
-                    <Typography variant="h3" color="primary" mb={2}>Get In Touch</Typography>
+                    <Typography variant="h3" color="primary" sx={{ mb: 2 }}>Get In Touch</Typography>
+                    <Typography align="center" color="textPrimary" sx={{ mb: 2 }}>
+                        The fastest way to reach me is email at <Link href="mailto:hello@dayo.dev">hello@dayo.dev</Link>
+                        &nbsp;, Also on <Link href="https://www.linkedin.com/in/dayo-adebanjo" target="_blank" rel="noopener noreferrer">LinkedIn</Link> and <Link href="https://github.com/dahyorr" target="_blank" rel="noopener noreferrer">GitHub</Link>
+                        &nbsp;or use the form below:
+                    </Typography>
                     <Container
                         maxWidth="md"
                         component="form"

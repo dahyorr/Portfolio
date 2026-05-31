@@ -1,6 +1,6 @@
-import "react-image-gallery/styles/css/image-gallery.css";
+import "react-image-gallery/styles/image-gallery.css";
 import Layout from '@/components/Layout'
-
+import EmotionRegistry from './EmotionRegistry'
 import SectionContextProvider from '@/context/SectionContext';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
@@ -10,8 +10,8 @@ import Portfolio from "@/components/Sections/Projects";
 
 export const metadata: Metadata = {
   title: 'Dayo Adebanjo | Full-Stack Developer',
-  description: 'Full-Stack Developer specializing in TypeScript, Next.js, Go, and Python. Building scalable web applications with modern technologies. Based in Leeds, UK.',
-  keywords: ['Full-Stack Developer', 'TypeScript', 'Next.js', 'React', 'Go', 'Python', 'Web Development', 'Leeds', 'United Kingdom', 'Software Engineer', 'Dayo Adebanjo'],
+  description: 'Full-Stack Engineer based in Leeds, UK. 5 years building production web applications in TypeScript, Next.js, Node, and Go. Currently pursuing an MSc in Cybersecurity, focused on application and cloud security.',
+  keywords: ['Full-Stack Developer', 'TypeScript', 'Next.js', 'React', 'Go', 'Python', 'Web Development', 'Leeds', 'United Kingdom', 'Software Engineer', 'Dayo Adebanjo', 'Application Security', 'Cloud Security', 'AWS', 'Cybersecurity', 'AppSec'],
   authors: [{ name: 'Dayo Adebanjo' }],
   creator: 'Dayo Adebanjo',
   applicationName: "Dayo's Portfolio",
@@ -155,12 +155,13 @@ export default function RootLayout({
           })(window, document, "clarity", "script", "h3w1a5mofn");`
           }}
         />
-        <SectionContextProvider>
-
-          <Layout forceTransparencyDisable={false}>
-            {children}
-          </Layout>
-        </SectionContextProvider>
+        <EmotionRegistry>
+          <SectionContextProvider>
+            <Layout forceTransparencyDisable={false}>
+              {children}
+            </Layout>
+          </SectionContextProvider>
+        </EmotionRegistry>
         <Analytics />
         <SpeedInsights />
       </body>

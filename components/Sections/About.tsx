@@ -5,30 +5,40 @@ import Stack from '@mui/material/Stack'
 import PageSection from '../PageSection'
 import Container from '@mui/material/Container'
 import Paper from '@mui/material/Paper'
-import Divider from '@mui/material/Divider';
-import SvgIcon from '@mui/material/SvgIcon'
-import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
+import Grid from '@mui/material/Grid'
+import Chip from '@mui/material/Chip'
 import Link from '@mui/material/Link'
-import ListItemText from '@mui/material/ListItemText'
 import Button from '@mui/material/Button'
-import CodeIcon from 'assets/web-code.svg'
-import ToolsIcon from 'assets/computer-repair.svg'
 import { MdCloudDownload } from 'react-icons/md'
-import { useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
+import { alpha } from '@mui/material/styles'
+
+type SkillCategory = {
+  title: string;
+  skills: string[];
+  accent?: boolean;
+};
+
+const skillCategories: SkillCategory[] = [
+  { title: "Languages", skills: ["TypeScript", "JavaScript", "Python", "Go"] },
+  { title: "Frontend", skills: ["React", "Next.js", "Tailwind CSS"] },
+  { title: "Backend", skills: ["Node.js", "Express", "Nest.js", "FastAPI", "Django", "GoFiber", "GraphQL"] },
+  { title: "Databases", skills: ["PostgreSQL", "MongoDB", "Redis"] },
+  { title: "Cloud & Infrastructure", skills: ["AWS", "GCP", "Vercel", "Supabase", "Firebase", "Docker", "Proxmox"] },
+  {
+    title: "Security", skills: [
+      "OWASP Top 10",
+      "Burp Suite",
+      // "Threat Modelling",
+      "Secure SDLC",
+      "OAuth 2.0 / OIDC",
+      "AWS IAM & KMS",
+      // "SIEM (Wazuh)",
+      "Vulnerability Assessment",
+    ], accent: true
+  },
+];
 
 const About: React.FC = () => {
-
-  const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
-
-  const skillList = {
-    languages: ["TypeScript", 'JavaScript', 'Python', "Go", "Rust"],
-    frameworks: ['Next.js', 'Django', "FastAPI", 'Express', 'Nest.js', "GoFiber"],
-    cloudServices: ['AWS', "GCP", 'Firebase', 'Vercel', 'Supabase'],
-    others: ['Docker', 'Postgres', 'Mongo Db', 'Redis', 'Graphql', "Node.js", 'Tailwind CSS'],
-  }
 
   return (
     <PageSection
@@ -39,25 +49,22 @@ const About: React.FC = () => {
       fitContent
     >
       <Box
-        width="100%"
-        bgcolor='primary.main'
-        pt="10rem"
-        pb="18rem"
+        sx={{ width: '100%', bgcolor: 'primary.main', pt: '10rem', pb: '18rem' }}
       >
         <Container maxWidth='md'>
-          <Stack margin="auto" justifyContent={'center'} alignItems="center">
+          <Stack sx={{ margin: 'auto', justifyContent: 'center', alignItems: 'center' }}>
             <Typography
               variant="h2"
-              color="white"
+              color="platinium"
               align="center"
-              mb={2}
+              sx={{ mb: 2 }}
             >
               Hi, I&apos;m Dayo
             </Typography>
-            <Typography color="white" align='center' mb={2} fontSize={18} maxWidth="800px">
-              I&apos;m a self-taught Full-Stack Developer Based in Leeds, UK, with 5 years of experience building scalable web applications.
-              I specialize in creating performant, user-centric solutions using modern technologies like TypeScript, Next.js, and Go.
-              From conceptualization to deployment, I&apos;m passionate about transforming ideas into production-ready applications that solve real-world problems.
+            <Typography color="platinium" align='center' sx={{ mb: 2, fontSize: 18, maxWidth: '800px' }}>
+              I&apos;m a Full-Stack Engineer based in Leeds, UK, with 5 years of production experience building web applications. I work primarily in TypeScript, Next.js, Node, Python, and Go. comfortable across the stack, from API design and database modelling to implementation and deployment.            </Typography>
+            <Typography color="platinium" align='center' sx={{ mb: 2, fontSize: 18, maxWidth: '800px' }}>
+              I&apos;m currently pursuing an MSc in Cybersecurity at Leeds Beckett University, where I&apos;m focused on application security, cloud security, and secure software development. AWS Certified Developer. Open to AppSec, Security Engineering, and senior full-stack opportunities.
             </Typography>
 
             <Link href="/Adedayo_Adebanjo_Resume.pdf" download color="inherit" underline="none">
@@ -78,102 +85,61 @@ const About: React.FC = () => {
 
       <Container maxWidth='lg'
         sx={{
-          // minHeight:"calc(100% - 10rem)", 
-          // overflow: 'hidden',
           top: '-10rem',
           position: 'relative',
-        }}>
-        <Paper sx={{
-          width: "100%",
-          margin: 'auto',
-          py: 4,
         }}
-          elevation={6}
-        >
-          <Box
-            display="flex"
-            justifyContent={'space-between'}
-            alignItems={isSmallScreen ? 'center' : "flex-start"}
-            minHeight="16rem"
-            flexDirection={isSmallScreen ? 'column' : 'row'}
-          >
-            <Stack width={{ xs: '100%', md: '50%' }} alignItems="center" py="1rem">
-              <SvgIcon color="primary" component={CodeIcon} inheritViewBox sx={{ fontSize: 70 }} />
-              <Typography variant="h3" align="center" mb={2}>Languages And Skills</Typography>
+      >
+        <Paper sx={{ width: '100%', margin: 'auto', p: 4 }} elevation={6}>
+          <Typography variant="h2" align="center" sx={{ mb: 1 }}>Skills &amp; Tools</Typography>
+          <Typography color="text.secondary" align="center" sx={{ mb: 4 }}>
+            What I work with day-to-day, and what I&apos;m learning next.
+          </Typography>
 
-              <Stack direction="row" spacing={8}>
-                <Box>
-                  <Typography color="primary" align='center' variant="h4">Languages</Typography>
-                  <List>
-                    {skillList.languages.map((skill) => (
-                      <ListItem key={skill} disablePadding>
-                        <ListItemText
-                          primaryTypographyProps={{ align: 'center' }}
-                        >
-                          {skill}
-                        </ListItemText>
-                      </ListItem>
+          <Grid container spacing={3} columns={{ xs: 1, sm: 2, md: 3 }}>
+            {skillCategories.map((category) => (
+              <Grid size={1} key={category.title}>
+                <Box
+                  sx={{
+                    p: 3,
+                    borderRadius: 3,
+                    border: '1px solid',
+                    borderColor: category.accent ? 'primary.light' : 'divider',
+                    bgcolor: category.accent
+                      ? (theme) => alpha(theme.palette.primary.main, 0.06)
+                      : 'transparent',
+                    height: '100%',
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-2px)',
+                      borderColor: category.accent ? 'primary.main' : 'action.selected',
+                    },
+                  }}
+                >
+                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+                    <Typography variant="h6" sx={{ fontWeight: 600 }}>
+                      {category.title}
+                    </Typography>
+                    {category.accent && (
+                      <Chip label="Learning" size="small" color="primary" variant="outlined" />
+                    )}
+                  </Box>
+
+                  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                    {category.skills.map((skill) => (
+                      <Chip
+                        key={skill}
+                        label={skill}
+                        size="small"
+                        variant="outlined"
+                        color={category.accent ? 'primary' : 'default'}
+                        sx={{ borderRadius: 1.5 }}
+                      />
                     ))}
-                  </List>
+                  </Box>
                 </Box>
-
-                <Box>
-                  <Typography color="primary" variant="h4" align='center'>Frameworks</Typography>
-                  <List>
-                    {skillList.frameworks.map((skill) => (
-                      <ListItem key={skill} disablePadding>
-                        <ListItemText
-                          primaryTypographyProps={{ align: 'center' }}
-                        >
-                          {skill}
-                        </ListItemText>
-                      </ListItem>
-                    ))}
-                  </List>
-                </Box>
-              </Stack>
-            </Stack>
-
-            <Divider orientation={isSmallScreen ? "horizontal" : "vertical"} flexItem />
-
-            <Stack width={{ xs: '100%', md: '50%' }} alignItems="center" justifyContent="flex-start" py="1rem">
-              <SvgIcon color="primary" component={ToolsIcon} inheritViewBox sx={{ fontSize: 70 }} />
-              <Typography variant="h3" mb={2} align="center">My Dev Tools</Typography>
-
-              <Stack direction='row' spacing={8}>
-                <Box>
-                  <Typography color="primary" variant="h4" align='center'>Services</Typography>
-                  <List>
-                    {skillList.cloudServices.map((skill) => (
-                      <ListItem key={skill} disablePadding>
-                        <ListItemText
-                          primaryTypographyProps={{ align: 'center' }}
-                        >
-                          {skill}
-                        </ListItemText>
-                      </ListItem>
-                    ))}
-                  </List>
-                </Box>
-
-                <Box>
-                  <Typography color="primary" variant="h4" align='center'>Others</Typography>
-                  <List>
-                    {skillList.others.map((skill) => (
-                      <ListItem key={skill} disablePadding>
-                        <ListItemText
-                          primaryTypographyProps={{ align: 'center' }}
-                        >
-                          {skill}
-                        </ListItemText>
-                      </ListItem>
-                    ))}
-                  </List>
-                </Box>
-              </Stack>
-
-            </Stack>
-          </Box>
+              </Grid>
+            ))}
+          </Grid>
         </Paper>
       </Container>
 

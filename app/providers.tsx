@@ -1,6 +1,6 @@
 "use client"
 import React, { PropsWithChildren } from 'react'
-import { ThemeProvider } from '@mui/material/styles';
+import { CssVarsProvider } from '@mui/material/styles';
 import { theme } from "@/helpers/theme";
 import SectionContextProvider from 'context/SectionContext';
 import { SnackbarProvider } from 'notistack';
@@ -11,7 +11,7 @@ const Providers = ({ children }: PropsWithChildren<Props>) => {
 
   return (
     <>
-      <ThemeProvider theme={theme}>
+      <CssVarsProvider theme={theme} defaultColorScheme="light">
         <SectionContextProvider>
 
           {/* <Preloader /> */}
@@ -25,7 +25,7 @@ const Providers = ({ children }: PropsWithChildren<Props>) => {
             {children}
           </SnackbarProvider>
         </SectionContextProvider>
-      </ThemeProvider >
+      </CssVarsProvider>
     </>
   )
 }

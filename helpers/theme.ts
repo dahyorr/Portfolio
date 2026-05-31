@@ -1,6 +1,5 @@
 "use client"
-import { createTheme } from '@mui/material/styles';
-// import {grey} from '@mui/material/colors'
+import { extendTheme } from '@mui/material/styles';
 import { Josefin_Sans, La_Belle_Aurore } from 'next/font/google';
 
 
@@ -32,32 +31,40 @@ declare module '@mui/material/styles' {
     }
 }
 
-export const theme = createTheme({
-    palette: {
-        mode: 'light',
-        primary: {
-            main: '#4169e1',
-            contrastText: "#ffffff"
-        },
-        secondary: {
-            main: '#3c3c3c',
-            contrastText: "#ffffff"
-        },
-        platinium: {
-            main: '#E7E7E7',
-        },
-        amaranth: {
-            main: '#db324d',
-        },
-        background: {
-            default: '#F4F5FE',
-            paper: '#FFFFFF',
+export const theme = extendTheme({
+    colorSchemes: {
+        light: {
+            palette: {
+                primary: {
+                    main: '#4169e1',
+                    contrastText: '#ffffff',
+                },
+                secondary: {
+                    main: '#3c3c3c',
+                    contrastText: '#ffffff',
+                },
+                platinium: {
+                    main: '#FFFFFF',
+                    contrastText: '#1a1a1a',
+                },
+                amaranth: {
+                    main: '#db324d',
+                },
+                background: {
+                    default: '#F4F5FE',
+                    paper: '#FFFFFF',
+                },
+                text: {
+                    primary: '#1a1a1a',
+                    secondary: '#555555',
+                },
+            },
         },
     },
     mixins: {
         toolbar: {
             minHeight: '70px',
-        }
+        },
     },
     components: {
         MuiListItemButton: {
@@ -68,22 +75,21 @@ export const theme = createTheme({
         MuiAppBar: {
             styleOverrides: {
                 colorPrimary: {
-                    backgroundColor: "#3B8BEB"
-                }
-            }
+                    backgroundColor: '#3B8BEB',
+                },
+            },
         },
         MuiOutlinedInput: {
             styleOverrides: {
                 root: {
-                    background: 'white'
+                    background: 'var(--mui-palette-platinium-main)',
                     // '&.Mui-disabled': {
                     //     background: grey[100],
                     // }
-                }
-            }
-        }
+                },
+            },
+        },
     },
-
     typography: {
         fontFamily: josefinSans.style.fontFamily,
         h1: {
@@ -130,13 +136,13 @@ export const theme = createTheme({
             fontWeight: 500,
             fontSize: '1rem',
             lineHeight: 1.75,
-            letterSpacing: 0
+            letterSpacing: 0,
         },
         subtitle2: {
             fontWeight: 500,
             fontSize: '0.875rem',
             lineHeight: 1.75,
-            letterSpacing: 0
+            letterSpacing: 0,
         },
         // subtitle2lg: {
         //     fontWeight: 500,
@@ -148,17 +154,17 @@ export const theme = createTheme({
             fontWeight: 400,
             fontSize: '0.75rem',
             lineHeight: 1.6,
-            letterSpacing: 0
+            letterSpacing: 0,
         },
         overline: {
             fontWeight: 600,
             fontSize: '0.75rem',
             lineHeight: 2.46,
             letterSpacing: '1px',
-            textTransform: 'uppercase'
+            textTransform: 'uppercase',
         },
         button: {
-            textTransform: "none"
-        }
-    }
+            textTransform: 'none',
+        },
+    },
 });

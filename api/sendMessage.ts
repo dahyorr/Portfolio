@@ -1,6 +1,11 @@
-import axios from 'axios'
 import { MessageRequestBody } from 'typings'
 
 export const sendMessage = async (body: MessageRequestBody) => {
-  return axios.post(process.env.NEXT_PUBLIC_FORMSPREE_URL || '', body)
+  return fetch(process.env.NEXT_PUBLIC_FORMSPREE_URL || '', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  });
 }

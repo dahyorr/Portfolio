@@ -65,25 +65,12 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ project }) => {
         <Box
           className="img-container"
           sx={{
+            position: 'relative',
             transform: 'translateZ(0)',
             display: 'block',
             height: '100%',
             width: '100%',
             transition: 'transform 750ms cubic-bezier(0.2, 1, 0.3, 1)',
-            '&:before': {
-              content: '""',
-              display: 'block',
-              paddingTop: '75%',
-              overflow: 'hidden',
-            },
-            img: {
-              position: 'relative',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: 'auto',
-              lineHeight: 0,
-            }
           }}>
           <Image
             fill
@@ -91,6 +78,7 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ project }) => {
             src={generateImageUrl(project.images[0], 'small')}
             alt={project.title}
             priority
+            sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
           />
         </Box>
         <Stack className="showcase-content" sx={{
@@ -111,7 +99,7 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ project }) => {
           justifyContent: 'space-evenly'
         }}>
           <Typography>{project.shortDescription}</Typography>
-          <Stack spacing={2} alignItems="center" direction='row'>
+          <Stack spacing={2} direction='row' sx={{ alignItems: 'center' }}>
 
             {project.liveUrl && (<Tooltip title="View Demo">
               <Link href={project.liveUrl} target="_blank" color="#fff">

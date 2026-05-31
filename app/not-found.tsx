@@ -19,7 +19,7 @@ export default function NotFound() {
       >
         <Typography variant="h2">404</Typography>
         <Typography variant="h5">Whoops!</Typography>
-        <Typography fontSize="18">How did you get here ?</Typography>
+        <Typography sx={{ fontSize: '18px' }}>How did you get here ?</Typography>
       </Paper>
     </Box>
   )

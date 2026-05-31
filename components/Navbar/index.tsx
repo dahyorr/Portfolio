@@ -30,7 +30,7 @@ const Navbar: React.FC<NavbarProps> = ({ forceTransparencyDisable }) => {
   const { section } = useSection();
   const isMediumScreen = useMediaQuery(theme.breakpoints.down('md'));
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
-  const textColor = transparentBackground ? '#fff' : 'inherit'
+  const textColor = transparentBackground ? 'platinium' : 'inherit'
 
   const links = [
     { title: 'Home', id: 'home', href: '/#home' },
@@ -77,10 +77,10 @@ const Navbar: React.FC<NavbarProps> = ({ forceTransparencyDisable }) => {
       >
         <ListItemText
           primary={title}
-          primaryTypographyProps={{
-            color: !openDrawer ? textColor : 'inherit',
-            sx: {
-              textDecoration: 'none',
+          slotProps={{
+            primary: {
+              color: !openDrawer ? textColor : 'inherit',
+              sx: { textDecoration: 'none' },
             }
           }}
         />
@@ -127,13 +127,13 @@ const Navbar: React.FC<NavbarProps> = ({ forceTransparencyDisable }) => {
               color: 'secondary.main',
             }}>
               <Typography
-                fontFamily={laBelleAurore.style.fontFamily}
                 variant={isSmallScreen ? "h4" : 'h2'}
                 color={textColor}
+                sx={{ fontFamily: laBelleAurore.style.fontFamily }}
               >
                 Dayo
               </Typography>
-              <Stack direction={'row'} spacing={4} alignItems="center">
+              <Stack direction={'row'} spacing={4} sx={{ alignItems: 'center' }}>
                 {
                   !isMediumScreen
                     ? linkMap

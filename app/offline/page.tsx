@@ -19,7 +19,7 @@ export default function OfflinePage() {
       >
         <Typography variant="h2">Offline</Typography>
         <Typography variant="h5">Whoops!</Typography>
-        <Typography fontSize="18">Maybe someone pulled plug ?</Typography>
+        <Typography sx={{ fontSize: '18px' }}>Maybe someone pulled plug ?</Typography>
       </Paper>
     </Box>
   )

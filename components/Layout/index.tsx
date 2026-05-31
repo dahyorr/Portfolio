@@ -8,7 +8,7 @@ import GlobalStyles from '@mui/material/GlobalStyles';
 import { isMobile } from 'react-device-detect';
 import Footer from '@/components/Footer'
 import { SnackbarProvider } from 'notistack';
-import { ThemeProvider } from "@mui/material/styles";
+import { CssVarsProvider } from "@mui/material/styles";
 import { theme } from "@/helpers/theme";
 
 interface LayoutProps {
@@ -36,7 +36,7 @@ const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({ children, forceTrans
 
   return (
     <>
-      <ThemeProvider theme={theme}>
+      <CssVarsProvider theme={theme} defaultColorScheme="light">
         <SnackbarProvider
           maxSnack={3}
           anchorOrigin={{
@@ -58,7 +58,7 @@ const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({ children, forceTrans
               '*::-webkit-scrollbar-thumb': {
                 backgroundColor: `#999`,
                 borderRadius: '6px',
-                border: '3px solid white',
+                border: '3px solid var(--mui-palette-platinium-main)',
               },
               scrollSnapType: 'y mandatory',
               overflowY: 'scroll',
@@ -67,7 +67,7 @@ const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({ children, forceTrans
                 top: '-40px',
                 left: 0,
                 background: theme.palette.primary.main,
-                color: 'white',
+                color: 'var(--mui-palette-platinium-main)',
                 padding: '8px 16px',
                 textDecoration: 'none',
                 zIndex: 9999,
@@ -84,7 +84,7 @@ const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({ children, forceTrans
           {children}
           <Footer />
         </SnackbarProvider>
-      </ThemeProvider>
+      </CssVarsProvider>
     </>
   )
 }

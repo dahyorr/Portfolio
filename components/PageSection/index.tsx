@@ -53,14 +53,16 @@ const PageSection: React.FC<PageSectionProps> = ({
 
   return (
     <Box
-      minHeight={fitContent ? undefined : "100vh"}
-      height={viewportHeight ? "100vh" : (fitContent ? "fit-content" : undefined)}
-      width="100%"
       id={title}
       component="main"
-      sx={{ ...sx }}
+      sx={{
+        minHeight: fitContent ? undefined : '100vh',
+        height: viewportHeight ? '100vh' : (fitContent ? 'fit-content' : undefined),
+        width: '100%',
+        py: disablePy ? 0 : 10,
+        ...sx,
+      }}
       ref={pageRef}
-      py={disablePy ? 0 : 10}
       {...props}
     >
       {renderChild()}

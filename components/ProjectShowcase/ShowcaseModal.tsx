@@ -7,9 +7,9 @@ import Stack from '@mui/material/Stack';
 import Dialog from '@mui/material/Dialog';
 import Gallery from './Gallery';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import {useTheme} from '@mui/material/styles';
+import { useTheme } from '@mui/material/styles';
 import { IconButton } from '@mui/material';
-import {AiOutlineClose} from 'react-icons/ai'
+import { AiOutlineClose } from 'react-icons/ai'
 
 interface ShowcaseModalProps {
   handleClose: () => void;
@@ -18,67 +18,74 @@ interface ShowcaseModalProps {
   description: React.ReactNode;
 }
 
-const ShowcaseModal: React.FC<ShowcaseModalProps> = ({handleClose, open, images, description}) => {
+const ShowcaseModal: React.FC<ShowcaseModalProps> = ({ handleClose, open, images, description }) => {
   const theme = useTheme();
   const isMediumScreen = useMediaQuery(theme.breakpoints.down('lg'));
 
   return (
     <Dialog
-        open={open}
-        onClose={handleClose}
-        fullWidth
-        maxWidth="xl"
+      open={open}
+      onClose={handleClose}
+      fullWidth
+      maxWidth="xl"
+      sx={{
+        '& .MuiPaper-root': {
+          bgcolor: 'secondary.main',
+          color: 'white',
+          position: 'relative'
+        }
+      }}
+      aria-labelledby="Project Preview"
+    // aria-describedby=""
+    >
+      <IconButton
+        onClick={handleClose}
+        size="medium"
         sx={{
-          '& .MuiPaper-root': {
-            bgcolor: 'secondary.main',
-            color: 'white',
-            position: 'relative'
+          position: 'absolute',
+          top: 4,
+          right: 4,
+          color: 'white',
+          bgcolor: 'rgba(0,0,0,0.25)',
+          zIndex: 1000,
+          '&:hover': {
+            bgcolor: 'rgba(0,0,0,0.35)',
           }
-        }}
-        aria-labelledby="Project Preview"
-        // aria-describedby=""
-      >
-        <IconButton 
-          onClick={handleClose} 
-          size="medium"
-          sx={{
-            position: 'absolute', 
-            top: 4, 
-            right: 4,
-            color: 'white',
-            bgcolor: 'rgba(0,0,0,0.25)',
-            zIndex: 1000,
-            '&:hover': {
-              bgcolor: 'rgba(0,0,0,0.35)',
-            }
-          }}>
-          <AiOutlineClose/>
-        </IconButton>
+        }}>
+        <AiOutlineClose />
+      </IconButton>
 
-        <Stack height="95vh" direction={isMediumScreen ? 'column' :'row'}>
-          
-        <Box 
-          height={isMediumScreen ? "60%" : "100%"} 
-          width={isMediumScreen ? '100%' : "50%"}
-          sx={{position: 'relative'}}
+      <Stack sx={{
+        // height: "85vh",
+        py: 8,
+        flexDirection: isMediumScreen ? 'column' : 'row'
+      }}>
+
+        <Box
+
+          sx={{
+            position: 'relative',
+            height: isMediumScreen ? "60%" : "100%",
+            width: isMediumScreen ? '100%' : "50%",
+          }}
         >
-          <Gallery images={images}/>
+          <Gallery images={images} />
         </Box>
 
-          <Box 
-            height={isMediumScreen ? "40%" : "100%"} 
-            width={isMediumScreen ? '100%' : "50%"}
-            sx={{
-              px: 4,
-              py: 2,
-              overflowY: 'auto',
-            }}
-          >
-            {description}
-          </Box>
+        <Box
+          sx={{
+            px: 4,
+            py: 2,
+            overflowY: 'auto',
+            height: isMediumScreen ? "40%" : "100%",
+            width: isMediumScreen ? '100%' : "50%"
+          }}
+        >
+          {description}
+        </Box>
 
-        </Stack>
-      </Dialog>
+      </Stack>
+    </Dialog>
   )
 }
 

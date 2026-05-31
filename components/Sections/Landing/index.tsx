@@ -1,5 +1,5 @@
 "use client"
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import NextLink from 'next/link'
 import Box from '@mui/material/Box'
 import PageSection from '../../PageSection'
@@ -13,18 +13,34 @@ import { useTheme } from '@mui/material/styles';
 import { BiMailSend } from 'react-icons/bi'
 import { AiFillGithub, AiOutlineTwitter, AiFillLinkedin, AiFillMail } from 'react-icons/ai'
 import socialLinks from 'helpers/socials.json'
-import ParticleBackground from './ParticleBackground'
+import PlainBackground from './PlainBackground'
+// import ParticleBackground from './ParticleBackground'
+
+const TITLES = ['Full-Stack Web Engineer', 'Application and Cloud Security Engineer']
 
 const Landing: React.FC = () => {
   const theme = useTheme();
   const isLargeScreen = useMediaQuery(theme.breakpoints.down('xl'));
+  const [titleIndex, setTitleIndex] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisible(false);
+      setTimeout(() => {
+        setTitleIndex(i => (i + 1) % TITLES.length);
+        setVisible(true);
+      }, 400);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <PageSection
       title="home"
-      bgcolor="transparent"
       viewportHeight
       sx={{
+        bgcolor: 'transparent',
         position: 'relative',
         '& #landing-background': {
           height: '100%',
@@ -86,7 +102,8 @@ const Landing: React.FC = () => {
         </IconButton>
       </Stack>)}
 
-      <ParticleBackground />
+      <PlainBackground />
+      {/* <ParticleBackground /> */}
       <Box
         sx={{
           display: 'flex',
@@ -97,25 +114,27 @@ const Landing: React.FC = () => {
       >
         <Stack spacing={0}>
           <Typography
-            color="white"
-            fontSize="1.6rem"
-            fontWeight={700}
+            color="platinium"
+            sx={{ fontSize: '1.6rem', fontWeight: 700 }}
           >
             Hi, I&apos;m
           </Typography>
           <Typography
             color="primary"
-            fontSize={{ xs: '4rem', sm: '5.5rem', md: '7.5rem' }}
-            fontWeight={700}
+            sx={{ fontSize: { xs: '4rem', sm: '5.5rem', md: '7.5rem' }, fontWeight: 700 }}
           >
             Dayo
           </Typography>
           <Typography
-            color="white"
-            fontSize={{ xs: '1.8rem', sm: '2.5rem', md: '3.4rem' }}
-            fontWeight={700}
+            color="platinium"
+            sx={{
+              fontSize: { xs: '1.8rem', sm: '2.5rem', md: '3.4rem' },
+              fontWeight: 700,
+              transition: 'opacity 0.4s ease',
+              opacity: visible ? 1 : 0,
+            }}
           >
-            Full-Stack Web Developer
+            {TITLES[titleIndex]}
           </Typography>
 
           <Stack sx={{ flexDirection: 'row', mt: 4 }}>
@@ -125,7 +144,7 @@ const Landing: React.FC = () => {
               variant="contained"
               size="large"
               endIcon={<BiMailSend color="#fff" />}
-              sx={{ py: 2, px: 4, color: 'white', mr: 2 }}
+              sx={{ py: 2, px: 4, color: 'platinium.main', mr: 2 }}
             >
               Contact Me
             </Button>
@@ -136,7 +155,7 @@ const Landing: React.FC = () => {
               variant="outlined"
               size="large"
               sx={{
-                color: 'white',
+                color: 'platinium.main',
                 py: 2,
                 px: 4,
               }}
