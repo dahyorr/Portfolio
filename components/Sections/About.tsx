@@ -62,7 +62,7 @@ const About: React.FC = () => {
               Hi, I&apos;m Dayo
             </Typography>
             <Typography color="platinium" align='center' sx={{ mb: 2, fontSize: 18, maxWidth: '800px' }}>
-              I&apos;m a Full-Stack Engineer based in Leeds, UK, with 5 years of production experience building web applications. I work primarily in TypeScript, Next.js, Node, Python, and Go. comfortable across the stack, from API design and database modelling to implementation and deployment.            </Typography>
+              I&apos;m a Full-Stack Engineer based in Leeds, UK, with 5 years of production experience building web applications. I work primarily in TypeScript, Next.js, Node, Python, and Go. Comfortable across the stack, from API design and database modelling to implementation and deployment.            </Typography>
             <Typography color="platinium" align='center' sx={{ mb: 2, fontSize: 18, maxWidth: '800px' }}>
               I&apos;m currently pursuing an MSc in Cybersecurity at Leeds Beckett University, where I&apos;m focused on application security, cloud security, and secure software development. AWS Certified Developer. Open to AppSec, Security Engineering, and senior full-stack opportunities.
             </Typography>
