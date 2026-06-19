@@ -9,7 +9,8 @@ import { Project } from 'typings'
 export const projectList: Project[] = [
   {
     title: 'Duplicast',
-    shortDescription: 'A simple tool for relaying RTMP video streams to multiple locations',
+    shortDescription: 'Relay a single RTMP stream to multiple destinations simultaneously — no re-encoding required.',
+    techStack: ['Go', 'Docker', 'RTMP', 'FFmpeg'],
     description: <Duplicast />,
     images: [
       'duplicast/1.png',
@@ -25,7 +26,8 @@ export const projectList: Project[] = [
   },
   {
     title: 'Pollinator',
-    shortDescription: 'A simple application that allows users to create and vote on polls.',
+    shortDescription: 'Create polls, share a link, and watch results update in real time.',
+    techStack: ['React', 'Node.js', 'PostgreSQL', 'WebSockets'],
     description: <Pollinator />,
     images: [
       'pollinator/1.png',
@@ -39,7 +41,8 @@ export const projectList: Project[] = [
   },
   {
     title: 'DevUtils',
-    shortDescription: 'A Collection of useful tools for developers.',
+    shortDescription: 'A browser-based toolkit — JSON formatter, base64 encoder, regex tester, and more.',
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS'],
     description: <DevUtils />,
     images: [
       'devutils/1.png',

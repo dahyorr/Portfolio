@@ -11,6 +11,7 @@ export interface Project {
   title: string,
   description: ReactNode,
   shortDescription: string,
+  techStack?: string[],
   images: string[],
   githubRepo?: string,
   liveUrl?: string,

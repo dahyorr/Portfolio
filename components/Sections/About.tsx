@@ -53,14 +53,6 @@ const About: React.FC = () => {
       >
         <Container maxWidth='md'>
           <Stack sx={{ margin: 'auto', justifyContent: 'center', alignItems: 'center' }}>
-            <Typography
-              variant="h2"
-              color="platinium"
-              align="center"
-              sx={{ mb: 2 }}
-            >
-              Hi, I&apos;m Dayo
-            </Typography>
             <Typography color="platinium" align='center' sx={{ mb: 2, fontSize: 18, maxWidth: '800px' }}>
               I&apos;m a Full-Stack Engineer based in Leeds, UK, with 5 years of production experience building web applications. I work primarily in TypeScript, Next.js, Node, Python, and Go. Comfortable across the stack, from API design and database modelling to implementation and deployment.            </Typography>
             <Typography color="platinium" align='center' sx={{ mb: 2, fontSize: 18, maxWidth: '800px' }}>
